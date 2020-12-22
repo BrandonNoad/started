@@ -1,25 +1,39 @@
 {
-  "name": "started",
-  "version": "1.0.0",
-  "private": true,
-  "description": "started",
-  "author": "Brandon Noad",
-  "keywords": [
-    "gatsby"
-  ],
-  "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "license": "0BSD",
-  "dependencies": {
-    "gatsby": "^2.26.1",
-    "gatsby-plugin-react-helmet": "^3.7.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0"
-  }
+    "name": "started",
+    "version": "1.0.0",
+    "private": true,
+    "description": "started",
+    "author": "Brandon Noad",
+    "keywords": [
+        "gatsby"
+    ],
+    "scripts": {
+        "build": "gatsby build",
+        "clean": "gatsby clean",
+        "develop": "gatsby develop",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+        "lint": "eslint .",
+        "start": "npm run develop",
+        "serve": "gatsby serve"
+    },
+    "license": "0BSD",
+    "dependencies": {
+        "@chakra-ui/gatsby-plugin": "^1.0.0",
+        "@chakra-ui/icons": "^1.0.2",
+        "@chakra-ui/react": "^1.0.4",
+        "@chakra-ui/theme-tools": "^1.0.2",
+        "@emotion/react": "^11.1.3",
+        "@emotion/styled": "^11.0.0",
+        "framer-motion": "^3.1.1",
+        "gatsby": "^2.26.1",
+        "gatsby-plugin-react-helmet": "^3.7.0",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-helmet": "^6.1.0",
+        "react-icons": "^4.1.0"
+    },
+    "devDependencies": {
+        "eslint": "^7.16.0",
+        "eslint-plugin-react": "^7.21.5"
+    }
 }
