@@ -8,7 +8,7 @@ const IndexPage = () => (
     <BlogLayout>
         <Box>
             <Container maxWidth="3xl">
-                <Heading as="h1" color="grey.900" size="3xl" align="center" mb={10}>
+                <Heading as="h1" color="gray.900" size="3xl" align="center" mb={10}>
                     Standards for
                     <br />
                     Rigor and Transparency
@@ -17,7 +17,7 @@ const IndexPage = () => (
                 </Heading>
             </Container>
             <Container maxWidth="2xl" centerContent>
-                <Text color="grey.500" fontWeight="medium" fontSize="xl" align="center" mb={8}>
+                <Text color="gray.500" fontWeight="medium" fontSize="xl" align="center" mb={8}>
                     This is placeholder text. Lorem ipsum dolor sit amet, consectetur adipisicing
                     elit. Suscipit explicabo distinctio consequuntur praesentium assumenda, eius ea
                     sit totam alias magnam ipsum, labore, doloribus ipsa. Quia debitis doloremque
@@ -27,7 +27,7 @@ const IndexPage = () => (
                     <Button colorScheme="primary" mr={4} as={Link} to="/app">
                         Get Started
                     </Button>
-                    <Button colorScheme="grey" variant="outline" as={Link} to="/about">
+                    <Button colorScheme="gray" variant="outline" as={Link} to="/about">
                         Learn More
                     </Button>
                 </Box>

@@ -1,7 +1,17 @@
 import React from 'react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 
 import BlogLayout from '../layouts/BlogLayout';
 
-const AboutPage = () => <BlogLayout>Hello, About!</BlogLayout>;
+const AboutPage = () => (
+    <BlogLayout>
+        <Box px={12}>
+            <Heading as="h2" size="xl" color="gray.900">
+                About
+            </Heading>
+            <Text>TODO</Text>
+        </Box>
+    </BlogLayout>
+);
 
 export default AboutPage;

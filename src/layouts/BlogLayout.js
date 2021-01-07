@@ -22,7 +22,7 @@ const BlogLayout = ({ children }) => {
                     </Square>
                 </Box>
                 <Box>
-                    <Button colorScheme="grey" variant="ghost" as={Link} to="/about">
+                    <Button colorScheme="gray" variant="ghost" as={Link} to="/about">
                         About
                     </Button>
                 </Box>

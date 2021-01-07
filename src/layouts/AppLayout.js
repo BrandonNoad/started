@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Box, Flex, Square, Icon, Button, Heading, Alert, AlertIcon } from '@chakra-ui/react';
+import { Box, Flex, Square, Icon, Button, Heading } from '@chakra-ui/react';
 import { SiStripe } from 'react-icons/si';
-import { DownloadIcon } from '@chakra-ui/icons';
 
-const AppLayout = ({ children }) => (
-    <Box bg="grey.100" height="full" minHeight="100vh">
-        <Box bg="grey.800" px={12}>
+const AppLayout = ({ heading, actions = null, children }) => (
+    <Box bg="gray.100" height="full" minHeight="100vh">
+        <Box bg="secondary.900" px={12}>
             <Flex
                 as="header"
                 align="center"
@@ -14,7 +13,7 @@ const AppLayout = ({ children }) => (
                 pt={6}
                 pb={4}
                 borderBottom="1px"
-                borderBottomColor="grey.600"
+                borderBottomColor="secondary.700"
                 mb={8}
             >
                 <Box>
@@ -33,10 +32,9 @@ const AppLayout = ({ children }) => (
                 </Box>
                 <Box>
                     <Button
-                        colorScheme="grey"
                         variant="ghost"
-                        color="grey.100"
-                        _hover={{ color: 'grey.50', backgroundColor: 'grey.700' }}
+                        color="gray.50"
+                        _hover={{ color: 'white', backgroundColor: 'secondary.800' }}
                         as={Link}
                         to="/about"
                     >
@@ -44,59 +42,20 @@ const AppLayout = ({ children }) => (
                     </Button>
                 </Box>
             </Flex>
-            <Box pb={40}>
+            <Box height={186}>
                 <Flex align="center" justify="space-between">
                     <Box>
-                        <Heading as="h1" size="xl" color="#fff">
-                            Study Configuration
+                        <Heading as="h1" size="xl" color="white">
+                            {heading}
                         </Heading>
                     </Box>
-                    <Box>
-                        <Button colorScheme="grey" leftIcon={<DownloadIcon />}>
-                            Export
-                        </Button>
-                    </Box>
+                    <Box>{actions}</Box>
                 </Flex>
             </Box>
         </Box>
-        <Box px={12}>
-            <Box mt={-28} borderRadius="md" bg="#fff" boxShadow="md">
-                <Box py={4} px={6} borderBottom="1px" borderBottomColor="grey.200">
-                    <Flex align="center" justify="space-between">
-                        <Heading as="h2" color="grey.900" fontSize="3xl">
-                            Participants
-                        </Heading>
-                        <Box>
-                            <Button colorScheme="grey" variant="outline">
-                                Back
-                            </Button>
-                        </Box>
-                    </Flex>
-                </Box>
-                <Box height="200px" py={4} px={6}>
-                    <Alert
-                        status="warning"
-                        bg="accent.4.100"
-                        color="accent.4.900"
-                        fontWeight="medium"
-                        py={4}
-                        px={6}
-                        borderRadius="sm"
-                    >
-                        <AlertIcon />
-                        This tool is not appropriate for the study.
-                    </Alert>
-                </Box>
-                <Box py={4} px={6} borderTop="1px" borderTopColor="grey.200">
-                    <Flex align="center">
-                        <Button colorScheme="primary" mr={2}>
-                            Next
-                        </Button>
-                        <Button colorScheme="grey" variant="outline">
-                            Back
-                        </Button>
-                    </Flex>
-                </Box>
+        <Box px={12} pb={12}>
+            <Box mt="-100px" as="main">
+                {children}
             </Box>
         </Box>
     </Box>
