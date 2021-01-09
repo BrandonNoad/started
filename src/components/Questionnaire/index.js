@@ -47,30 +47,33 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
 
     if (activeQuestionnaireSection === null) {
         return (
-            <SimpleGrid minChildWidth="480px" spacing={6}>
-                {questionnaireSections.map((questionnaireSection) => {
-                    const { id, title } = questionnaireSection;
+            <Box height="calc(100vh - 220px)" overflowY="scroll">
+                <SimpleGrid minChildWidth="480px" spacing={6}>
+                    {questionnaireSections.map((questionnaireSection) => {
+                        const { id, title } = questionnaireSection;
 
-                    const numQuestions = progressData[id]?.numQuestions ?? 0;
+                        const numQuestions = progressData[id]?.numQuestions ?? 0;
 
-                    const progress =
-                        numQuestions === 0
-                            ? 0
-                            : (progressData[id].numResponses / progressData[id].numQuestions) * 100;
+                        const progress =
+                            numQuestions === 0
+                                ? 0
+                                : (progressData[id].numResponses / progressData[id].numQuestions) *
+                                  100;
 
-                    const isWarning = false; // answers[id].filter((val) => val === 'No').length > 0;
+                        const isWarning = false; // answers[id].filter((val) => val === 'No').length > 0;
 
-                    return (
-                        <QuestionnaireSectionCard
-                            key={id}
-                            title={title}
-                            numQuestions={numQuestions}
-                            progress={progress}
-                            onClick={() => setActiveQuestionnaireSection(questionnaireSection)}
-                        />
-                    );
-                })}
-            </SimpleGrid>
+                        return (
+                            <QuestionnaireSectionCard
+                                key={id}
+                                title={title}
+                                numQuestions={numQuestions}
+                                progress={progress}
+                                onClick={() => setActiveQuestionnaireSection(questionnaireSection)}
+                            />
+                        );
+                    })}
+                </SimpleGrid>
+            </Box>
         );
     }
 
@@ -108,7 +111,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                     </Box>
                 </Flex>
             </Box>
-            <Box p={6}>
+            <Box p={6} height="calc(100vh - 295px)" overflowY="scroll">
                 {activeQuestionnaireSection.questionGroups.map(
                     (questionGroup, questionGroupIndex) => (
                         <QuestionGroup

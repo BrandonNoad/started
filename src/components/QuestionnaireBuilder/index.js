@@ -113,6 +113,10 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
         setPreviousQuestionsList(previousQuestionsList.slice(0, -1));
     };
 
+    const handleCloseAlert = () => {
+        setShowAlert(false);
+    };
+
     // TODO: will radio/checkbox key be ok?
     return (
         <>
@@ -188,10 +192,8 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
             <AlertDialog
                 isOpen={showAlert}
                 leastDestructiveRef={alertBackButtonRef}
-                onClose={() => {
-                    setShowAlert(false);
-                }}
-                size="2xl"
+                onClose={handleCloseAlert}
+                size="xl"
             >
                 <AlertDialogOverlay>
                     <AlertDialogContent p={6}>
@@ -223,9 +225,7 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
                                 variant="outline"
                                 ml={2}
                                 ref={alertBackButtonRef}
-                                onClick={() => {
-                                    setShowAlert(false);
-                                }}
+                                onClick={handleCloseAlert}
                             >
                                 Cancel
                             </Button>

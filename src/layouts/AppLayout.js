@@ -53,7 +53,7 @@ const AppLayout = ({ heading, actions = null, children }) => (
                 </Flex>
             </Box>
         </Box>
-        <Box px={12} pb={12}>
+        <Box px={12} pb={0}>
             <Box mt="-100px" as="main">
                 {children}
             </Box>
