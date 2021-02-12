@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Box, Flex, Square, Icon, Button, Heading } from '@chakra-ui/react';
-import { SiStripe } from 'react-icons/si';
+import { Box, Flex, Button, Heading } from '@chakra-ui/react';
+import { Image, Transformation } from 'cloudinary-react';
 
 const AppLayout = ({ heading, actions = null, children }) => (
     <Box bg="gray.100" height="full" minHeight="100vh">
@@ -17,18 +17,15 @@ const AppLayout = ({ heading, actions = null, children }) => (
                 mb={8}
             >
                 <Box>
-                    <Square
-                        borderRadius="xl"
-                        size="40px"
-                        bg="primary.500"
-                        color="white"
-                        cursor="pointer"
-                        _hover={{ bg: 'primary.600' }}
-                        as={Link}
-                        to="/"
-                    >
-                        <Icon as={SiStripe} />
-                    </Square>
+                    <Link to="/">
+                        <Image
+                            cloudName="noad"
+                            publicId="started_logo_u0vxyj.png"
+                            alt="STARTED logo"
+                        >
+                            <Transformation width="40" crop="scale" />
+                        </Image>
+                    </Link>
                 </Box>
                 <Box>
                     <Button

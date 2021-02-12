@@ -1,25 +1,22 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Box, Flex, Square, Icon, Button } from '@chakra-ui/react';
-import { SiStripe } from 'react-icons/si';
+import { Box, Flex, Button } from '@chakra-ui/react';
+import { Image, Transformation } from 'cloudinary-react';
 
 const BlogLayout = ({ children }) => {
     return (
         <>
             <Flex as="header" align="center" justify="space-between" px={12} pt={6} pb={4} mb={8}>
                 <Box>
-                    <Square
-                        borderRadius="xl"
-                        size="40px"
-                        bg="primary.500"
-                        color="white"
-                        cursor="pointer"
-                        _hover={{ bg: 'primary.600' }}
-                        as={Link}
-                        to="/"
-                    >
-                        <Icon as={SiStripe}></Icon>
-                    </Square>
+                    <Link to="/">
+                        <Image
+                            cloudName="noad"
+                            publicId="started_logo_u0vxyj.png"
+                            alt="STARTED logo"
+                        >
+                            <Transformation width="40" crop="scale" />
+                        </Image>
+                    </Link>
                 </Box>
                 <Box>
                     <Button colorScheme="gray" variant="ghost" as={Link} to="/about">
