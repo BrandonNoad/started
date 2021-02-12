@@ -19,6 +19,7 @@ const AppLayout = ({ heading, actions = null, children }) => (
                 <Box>
                     <Link to="/">
                         <Image
+                            secure
                             cloudName="noad"
                             publicId="started_logo_u0vxyj.png"
                             alt="STARTED logo"
