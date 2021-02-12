@@ -6,9 +6,10 @@ import {
     QUESTIONNAIRE_SECTION_ID_GENERAL_INSTRUMENTATION,
     QUESTIONNAIRE_SECTION_ID_VFSS,
     QUESTIONNAIRE_SECTION_ID_FEES,
+    QUESTIONNAIRE_SECTION_ID_OTHER_INSTRUMENTATION,
     QUESTIONNAIRE_SECTION_ID_SENSOR_BASED_INSTRUMENTATION,
     QUESTIONNAIRE_SECTION_ID_IMAGING_BASED_INSTRUMENTATION,
-    QUESTIONNAIRE_SECTION_ID_PROM,
+    QUESTIONNAIRE_SECTION_ID_PROM
 } from './questionnaire-sections/constants';
 
 export default [
@@ -20,7 +21,7 @@ export default [
         responseOptions: ['Yes', 'No'],
         questionnaireSections: [
             { filter: 0, id: QUESTIONNAIRE_SECTION_ID_PARTICIPANTS },
-            { filter: 0, id: QUESTIONNAIRE_SECTION_ID_UNIVERSALLY_APPLICABLE_QUESTIONS },
+            { filter: 0, id: QUESTIONNAIRE_SECTION_ID_UNIVERSALLY_APPLICABLE_QUESTIONS }
         ],
         questionGroups: [
             {
@@ -32,9 +33,9 @@ export default [
                         isMultipleResponsesAllowed: false,
                         responseOptions: ['Yes', 'No'],
                         questionnaireSections: [
-                            { filter: 0, id: QUESTIONNAIRE_SECTION_ID_TREATMENT },
+                            { filter: 0, id: QUESTIONNAIRE_SECTION_ID_TREATMENT }
                         ],
-                        questionGroups: [],
+                        questionGroups: []
                     },
                     {
                         question:
@@ -45,10 +46,10 @@ export default [
                         questionnaireSections: [
                             {
                                 filter: 0,
-                                id: QUESTIONNAIRE_SECTION_ID_NON_INSTRUMENTAL_ASSESSMENT_AND_SCREENING,
-                            },
+                                id: QUESTIONNAIRE_SECTION_ID_NON_INSTRUMENTAL_ASSESSMENT_AND_SCREENING
+                            }
                         ],
-                        questionGroups: [],
+                        questionGroups: []
                     },
                     {
                         question: 'Did the study utilize instrumentation?​',
@@ -58,8 +59,8 @@ export default [
                         questionnaireSections: [
                             {
                                 filter: 0,
-                                id: QUESTIONNAIRE_SECTION_ID_GENERAL_INSTRUMENTATION,
-                            },
+                                id: QUESTIONNAIRE_SECTION_ID_GENERAL_INSTRUMENTATION
+                            }
                         ],
                         questionGroups: [
                             {
@@ -67,38 +68,45 @@ export default [
                                 questions: [
                                     {
                                         question:
-                                            'Select the types of instrumentation used in the study?​',
+                                            'Select the types of instrumentation used in the study:',
                                         isResponseRequired: false,
                                         isMultipleResponsesAllowed: true,
                                         responseOptions: [
                                             'VFSS',
                                             'FEES',
-                                            'Other sensor-based tool',
-                                            'Other imaging-based tool',
+                                            'Other sensor-based instrumentation',
+                                            'Other imaging-based instrumentation'
                                         ],
                                         questionnaireSections: [
                                             {
                                                 filter: 0,
-                                                id: QUESTIONNAIRE_SECTION_ID_VFSS,
+                                                id: QUESTIONNAIRE_SECTION_ID_VFSS
                                             },
                                             {
                                                 filter: 1,
-                                                id: QUESTIONNAIRE_SECTION_ID_FEES,
+                                                id: QUESTIONNAIRE_SECTION_ID_FEES
+                                            },
+                                            {
+                                                filter: {
+                                                    type: 'some',
+                                                    values: [2, 3]
+                                                },
+                                                id: QUESTIONNAIRE_SECTION_ID_OTHER_INSTRUMENTATION
                                             },
                                             {
                                                 filter: 2,
-                                                id: QUESTIONNAIRE_SECTION_ID_SENSOR_BASED_INSTRUMENTATION,
+                                                id: QUESTIONNAIRE_SECTION_ID_SENSOR_BASED_INSTRUMENTATION
                                             },
                                             {
                                                 filter: 3,
-                                                id: QUESTIONNAIRE_SECTION_ID_IMAGING_BASED_INSTRUMENTATION,
-                                            },
+                                                id: QUESTIONNAIRE_SECTION_ID_IMAGING_BASED_INSTRUMENTATION
+                                            }
                                         ],
-                                        questionGroups: [],
-                                    },
-                                ],
-                            },
-                        ],
+                                        questionGroups: []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         question:
@@ -107,10 +115,10 @@ export default [
                         isMultipleResponsesAllowed: false,
                         responseOptions: ['Yes', 'No'],
                         questionnaireSections: [{ filter: 0, id: QUESTIONNAIRE_SECTION_ID_PROM }],
-                        questionGroups: [],
-                    },
-                ],
-            },
-        ],
-    },
+                        questionGroups: []
+                    }
+                ]
+            }
+        ]
+    }
 ];

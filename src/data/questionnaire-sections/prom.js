@@ -77,7 +77,7 @@ export default {
                                                 },
                                                 {
                                                     question:
-                                                        'Was the translation process performed according to an accepted translation method? (e.g. International Society for Pharmacoeconomics and Outcome Research (ISPOR) Task Force for translation and cultural adaptation)',
+                                                        'Was the translation process performed according to an accepted translation method? (e.g., International Society for Pharmacoeconomics and Outcome Research (ISPOR) Task Force for translation and cultural adaptation)',
                                                     labels: [LABEL_ID_RIGOR],
                                                     responseOptions: ['Yes', 'No']
                                                 }
@@ -108,20 +108,17 @@ export default {
                                     responseOptions: ['Yes', 'No']
                                 },
                                 {
-                                    question: 'Was content validity reported? (Validity)',
+                                    question:
+                                        'Were any of the following types of validity reported (select all that apply)?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    isMultipleResponsesAllowed: true,
+                                    responseOptions: [
+                                        'Content validity',
+                                        'Criterion validity',
+                                        'Construct validity'
+                                    ]
                                 },
-                                {
-                                    question: 'Was criterion validity reported? (Validity)',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
-                                },
-                                {
-                                    question: 'Was construct validity reported? (Validity)',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
-                                },
+
                                 {
                                     question:
                                         'Was PROM development described in detail (e.g., question development, pilot testing, etc.)?',

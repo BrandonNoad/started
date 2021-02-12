@@ -3,6 +3,7 @@ import fees from './fees';
 import generalInstrumentation from './generalInstrumentation';
 import imagingBasedInstrumentation from './imagingBasedInstrumentation';
 import nonInstrumentalAssessmentAndScreening from './nonInstrumentalAssessmentAndScreening';
+import otherInstrumentation from './otherInstrumentation';
 import participants from './participants';
 import prom from './prom';
 import sensorBasedInstrumentation from './sensorBasedInstrumentation';
@@ -13,12 +14,12 @@ import vfss from './vfss';
 export const labels = [
     {
         id: LABEL_ID_TRANSPARENCY,
-        label: 'Transparency',
+        label: 'Transparency'
     },
     {
         id: LABEL_ID_RIGOR,
-        label: 'Rigor',
-    },
+        label: 'Rigor'
+    }
 ];
 
 export default [
@@ -26,10 +27,11 @@ export default [
     generalInstrumentation,
     imagingBasedInstrumentation,
     nonInstrumentalAssessmentAndScreening,
+    otherInstrumentation,
     participants,
     prom,
     sensorBasedInstrumentation,
     treatment,
     universallyApplicableQuestions,
-    vfss,
+    vfss
 ];

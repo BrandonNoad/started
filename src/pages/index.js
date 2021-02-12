@@ -18,10 +18,10 @@ const IndexPage = () => (
             </Container>
             <Container maxWidth="2xl" centerContent>
                 <Text color="gray.500" fontWeight="medium" fontSize="xl" align="center" mb={8}>
-                    This is placeholder text. Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Suscipit explicabo distinctio consequuntur praesentium assumenda, eius ea
-                    sit totam alias magnam ipsum, labore, doloribus ipsa. Quia debitis doloremque
-                    atque cupiditate molestiae!
+                    This is placeholder text. This is placeholder text. This is placeholder text.
+                    This is placeholder text. This is placeholder text. This is placeholder text.
+                    This is placeholder text. This is placeholder text. This is placeholder text.
+                    This is placeholder text. This is placeholder text.
                 </Text>
                 <Box>
                     <Button colorScheme="primary" mr={4} as={Link} to="/app">

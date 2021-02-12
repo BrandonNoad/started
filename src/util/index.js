@@ -48,27 +48,27 @@ const addIdsToQuestionsInQuestionGroups = ({ questionGroups, idPrefix }) =>
             if (questionGroups && questionGroups.length) {
                 questionWithId.questionGroups = addIdsToQuestionsInQuestionGroups({
                     questionGroups,
-                    idPrefix: id,
+                    idPrefix: id
                 });
             }
 
             return questionWithId;
-        }),
+        })
     }));
 
 export const addIdsToQuestionsInQuestionnaireSection = (questionnaireSection) => ({
     ...questionnaireSection,
     questionGroups: addIdsToQuestionsInQuestionGroups({
         questionGroups: questionnaireSection.questionGroups,
-        idPrefix: questionnaireSection.id,
-    }),
+        idPrefix: questionnaireSection.id
+    })
 });
 
 // { numQuestions, numResponses }
 export const generateProgressDataForQuestionGroups = ({
     questionGroups,
     responses,
-    parentQuestionResponses = [],
+    parentQuestionResponses = []
 }) =>
     filterCollection(questionGroups, parentQuestionResponses).reduce(
         (questionGroupsAcc, { questions }) => {
@@ -80,7 +80,7 @@ export const generateProgressDataForQuestionGroups = ({
                         {
                             questionGroups: questionGroups ?? [],
                             responses,
-                            parentQuestionResponses: responses[id] ?? [],
+                            parentQuestionResponses: responses[id] ?? []
                         }
                     );
 
@@ -92,7 +92,7 @@ export const generateProgressDataForQuestionGroups = ({
                         numResponses:
                             (responsesForQuestion.length ? 1 : 0) +
                             questionsAcc.numResponses +
-                            progressDataForQuestionGroupsInQuestion.numResponses,
+                            progressDataForQuestionGroupsInQuestion.numResponses
                     };
                 },
                 { numQuestions: 0, numResponses: 0 }
@@ -101,8 +101,7 @@ export const generateProgressDataForQuestionGroups = ({
             return {
                 numQuestions:
                     questionGroupsAcc.numQuestions + progressDataForQuestions.numQuestions,
-                numResponses:
-                    questionGroupsAcc.numResponses + progressDataForQuestions.numResponses,
+                numResponses: questionGroupsAcc.numResponses + progressDataForQuestions.numResponses
             };
         },
         { numQuestions: 0, numResponses: 0 }
@@ -112,10 +111,11 @@ const questionGroupsToBlobData = ({
     questionGroups,
     responses,
     parentQuestionResponses = [],
-    depth = 0,
+    depth = 0
 }) => {
     const indent = new Array(depth * 4).fill(' ').join('');
 
+    // TODO: headings in nested question groups break the markdown formatting
     return filterCollection(questionGroups, parentQuestionResponses).flatMap(
         ({ questions, heading }) => [
             heading ? `### ${heading}\n\n` : '',
@@ -138,10 +138,10 @@ const questionGroupsToBlobData = ({
                         questionGroups: questionGroups ?? [],
                         responses,
                         parentQuestionResponses: responses[id] ?? [],
-                        depth: depth + 1,
-                    }),
+                        depth: depth + 1
+                    })
                 ];
-            }),
+            })
         ]
     );
 };
@@ -149,5 +149,5 @@ const questionGroupsToBlobData = ({
 export const questionnaireSectionToBlobData = ({ questionnaireSection, responses }) => [
     `## ${questionnaireSection.title}\n\n`,
     ...questionGroupsToBlobData({ questionGroups: questionnaireSection.questionGroups, responses }),
-    '\n',
+    '\n'
 ];

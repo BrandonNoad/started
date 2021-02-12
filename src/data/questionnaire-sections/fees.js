@@ -11,21 +11,21 @@ export default {
                     question: 'Was a validated secretion scale used?',
                     labels: [LABEL_ID_RIGOR],
                     responseOptions: ['Yes', 'No'],
-                },
-            ],
-            questionGroups: [
-                {
-                    filter: 1,
-                    questions: [
+                    questionGroups: [
                         {
-                            question:
-                                'Was application of non-validated secretion scale described in a reproducible manner?',
-                            labels: [LABEL_ID_TRANSPARENCY],
-                            responseOptions: ['Yes', 'No'],
-                        },
-                    ],
-                },
-            ],
+                            filter: 1,
+                            questions: [
+                                {
+                                    question:
+                                        'Was application of non-validated secretion scale described in a reproducible manner?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
+                                    responseOptions: ['Yes', 'No']
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             heading: 'Dye',
@@ -34,9 +34,9 @@ export default {
                     question:
                         'Was coloring method for bolus trials described for reproducible preparation (i.e., color type, brand, mixture method, amount, etc.)?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No'],
-                },
-            ],
+                    responseOptions: ['Yes', 'No']
+                }
+            ]
         },
         {
             heading: 'Lubrication',
@@ -52,8 +52,8 @@ export default {
                         'Concentration',
                         'Quantity',
                         'Application process',
-                        'No lubrication or nasal decongestant were utilized.',
-                    ],
+                        'No lubrication or nasal decongestant were utilized.'
+                    ]
                 },
                 {
                     question:
@@ -66,15 +66,15 @@ export default {
                         'Concentration',
                         'Quantity',
                         'Application process',
-                        'No topical anesthetic was utilized.',
-                    ],
+                        'No topical anesthetic was utilized.'
+                    ]
                 },
                 {
                     question: 'Was the protocol for describing anatomical abnormalities reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No'],
-                },
-            ],
+                    responseOptions: ['Yes', 'No']
+                }
+            ]
         },
         {
             heading: 'Assessment of Safety',
@@ -82,27 +82,27 @@ export default {
                 {
                     question: 'Was a validated penetration-aspiration scale used for FEES?',
                     labels: [LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No']
                 },
                 {
                     question:
                         'If a non-validated scale was utilized, were procedures described for reproducibility?',
                     labels: [LABEL_ID_TRANSPARENCY, LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No']
                 },
                 {
                     question:
                         'Was application of the safety rating scale described in a reproducible manner (i.e., bolus level, swallow level, worst verse mean, etc.)?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No']
                 },
                 {
                     question:
                         'Was timing of safety impairment (I.e., before, during or after the swallow) acknowledged?',
                     labels: [LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No'],
-                },
-            ],
+                    responseOptions: ['Yes', 'No']
+                }
+            ]
         },
         {
             heading: 'Assessment of Efficiency',
@@ -110,21 +110,62 @@ export default {
                 {
                     question: 'Was a validated residue scale used for FEES?',
                     labels: [LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No']
                 },
                 {
                     question:
                         'If a non-validated scale was utilized, were procedures described for reproducibility?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No']
                 },
                 {
                     question:
                         'Was application of residue rating scale described in a reproducible manner (i.e., bolus level, swallow level, region, etc.)?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No'],
-                },
-            ],
+                    responseOptions: ['Yes', 'No']
+                }
+            ]
         },
-    ],
+        {
+            heading: 'Reliability',
+            questions: [
+                {
+                    question: 'Was inter-rater reliability reported?',
+                    labels: [LABEL_ID_TRANSPARENCY],
+                    responseOptions: ['Yes', 'No'],
+                    questionGroups: [
+                        {
+                            filter: 0,
+                            questions: [
+                                {
+                                    question:
+                                        'Was the method for determining inter-rater reliability reported?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
+                                    responseOptions: ['Yes', 'No']
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    question: 'Was intra-rater reliability reported?',
+                    labels: [LABEL_ID_TRANSPARENCY],
+                    responseOptions: ['Yes', 'No'],
+                    questionGroups: [
+                        {
+                            filter: 0,
+                            questions: [
+                                {
+                                    question:
+                                        'Was the method for determining intra-rater reliability reported?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
+                                    responseOptions: ['Yes', 'No']
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 };
