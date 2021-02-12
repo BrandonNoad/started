@@ -47,7 +47,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
 
     if (activeQuestionnaireSection === null) {
         return (
-            <Box height="calc(100vh - 220px)" overflowY="scroll">
+            <Box height="calc(100vh - 220px)" overflowY="auto">
                 <SimpleGrid minChildWidth="480px" spacing={6}>
                     {questionnaireSections.map((questionnaireSection) => {
                         const { id, title } = questionnaireSection;
@@ -111,7 +111,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                     </Box>
                 </Flex>
             </Box>
-            <Box p={6} height="calc(100vh - 295px)" overflowY="scroll">
+            <Box p={6} height="calc(100vh - 295px)" overflowY="auto">
                 {activeQuestionnaireSection.questionGroups.map(
                     (questionGroup, questionGroupIndex) => (
                         <QuestionGroup
