@@ -24,7 +24,7 @@ import { generateProgressDataForQuestionGroups } from '../../util';
 // };
 
 const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
-    const [activeQuestionnaireSection, setActiveQuestionnaireSection] = useState(null);
+    const [activeQuestionnaireSectionIndex, setActiveQuestionnaireSectionIndex] = useState(null);
 
     const [progressData, setProgressData] = useState({});
 
@@ -45,7 +45,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
 
     // -- Overview
 
-    if (activeQuestionnaireSection === null) {
+    if (activeQuestionnaireSectionIndex === null) {
         return (
             <Box height="calc(100vh - 220px)" overflowY="auto">
                 <SimpleGrid minChildWidth="480px" spacing={6}>
@@ -68,7 +68,11 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                                 title={title}
                                 numQuestions={numQuestions}
                                 progress={progress}
-                                onClick={() => setActiveQuestionnaireSection(questionnaireSection)}
+                                onClick={() =>
+                                    setActiveQuestionnaireSectionIndex(
+                                        questionnaireSections.indexOf(questionnaireSection)
+                                    )
+                                }
                             />
                         );
                     })}
@@ -77,7 +81,15 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
         );
     }
 
+    const activeQuestionnaireSection = questionnaireSections[activeQuestionnaireSectionIndex];
+
     // -- Questionnaire Section View
+
+    const handleClickNextSection = () => {
+        setActiveQuestionnaireSectionIndex(
+            (activeQuestionnaireSectionIndex + 1) % questionnaireSections.length
+        );
+    };
 
     const handleClickBack = () => {
         setProgressData({
@@ -88,7 +100,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
             })
         });
 
-        setActiveQuestionnaireSection(null);
+        setActiveQuestionnaireSectionIndex(null);
     };
 
     const respondToQuestion = (questionId, responsesForQuestion) =>
@@ -105,7 +117,15 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                         {activeQuestionnaireSection.title}
                     </Heading>
                     <Box>
-                        <Button colorScheme="gray" variant="outline" onClick={handleClickBack}>
+                        <Button colorScheme="primary" onClick={handleClickNextSection}>
+                            Next Section
+                        </Button>
+                        <Button
+                            colorScheme="gray"
+                            variant="outline"
+                            ml={2}
+                            onClick={handleClickBack}
+                        >
                             Back
                         </Button>
                     </Box>
