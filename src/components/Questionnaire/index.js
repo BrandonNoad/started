@@ -85,13 +85,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
 
     // -- Questionnaire Section View
 
-    const handleClickNextSection = () => {
-        setActiveQuestionnaireSectionIndex(
-            (activeQuestionnaireSectionIndex + 1) % questionnaireSections.length
-        );
-    };
-
-    const handleClickBack = () => {
+    const updateProgress = () => {
         setProgressData({
             ...progressData,
             [activeQuestionnaireSection.id]: generateProgressDataForQuestionGroups({
@@ -99,6 +93,18 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                 responses
             })
         });
+    };
+
+    const handleClickNextSection = () => {
+        updateProgress();
+
+        setActiveQuestionnaireSectionIndex(
+            (activeQuestionnaireSectionIndex + 1) % questionnaireSections.length
+        );
+    };
+
+    const handleClickBack = () => {
+        updateProgress();
 
         setActiveQuestionnaireSectionIndex(null);
     };
