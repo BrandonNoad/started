@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SimpleGrid, Box, Flex, Heading, Button } from '@chakra-ui/react';
 
+import InvalidStudy from '../InvalidStudy';
 import QuestionnaireSectionCard from '../QuestionnaireSectionCard';
 import QuestionGroup from '../QuestionGroup';
 import { generateProgressDataForQuestionGroups } from '../../util';
@@ -37,11 +38,19 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                 };
             }, {})
         );
+
+        setActiveQuestionnaireSectionIndex(null);
     }, [questionnaireSections]);
 
     // useInterval(() => {
     //     localStorage.setItem('responses', JSON.stringify(responses));
     // });
+
+    // -- No Questions!
+
+    if (questionnaireSections.length === 0) {
+        return <InvalidStudy />;
+    }
 
     // -- Overview
 

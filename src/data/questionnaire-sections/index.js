@@ -23,15 +23,15 @@ export const labels = [
 ];
 
 export default [
-    fees,
-    generalInstrumentation,
-    imagingBasedInstrumentation,
-    nonInstrumentalAssessmentAndScreening,
-    otherInstrumentation,
-    participants,
-    prom,
-    sensorBasedInstrumentation,
-    treatment,
-    universallyApplicableQuestions,
-    vfss
+    { ...fees, order: 7 },
+    { ...generalInstrumentation, order: 5 },
+    { ...imagingBasedInstrumentation, order: 10 },
+    { ...nonInstrumentalAssessmentAndScreening, order: 4 },
+    { ...otherInstrumentation, order: 8 },
+    { ...participants, order: 1 },
+    { ...prom, order: 11 },
+    { ...sensorBasedInstrumentation, order: 9 },
+    { ...treatment, order: 3 },
+    { ...universallyApplicableQuestions, order: 2 },
+    { ...vfss, order: 6 }
 ];
