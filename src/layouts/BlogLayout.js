@@ -1,24 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { Box, Flex, Button } from '@chakra-ui/react';
-import { Image, Transformation } from 'cloudinary-react';
 
-const BlogLayout = ({ children }) => {
+import Seo from '../components/Seo';
+import Logo from '../components/Logo';
+
+const BlogLayout = ({ title, children }) => {
     return (
         <>
+            <Seo title={title}></Seo>
             <Flex as="header" align="center" justify="space-between" px={12} pt={6} pb={4} mb={8}>
-                <Box>
-                    <Link to="/">
-                        <Image
-                            secure
-                            cloudName="noad"
-                            publicId="started_logo_u0vxyj.png"
-                            alt="STARTED logo"
-                        >
-                            <Transformation width="40" crop="scale" />
-                        </Image>
-                    </Link>
-                </Box>
+                <Logo />
                 <Box>
                     <Button colorScheme="gray" variant="ghost" as={Link} to="/about">
                         About

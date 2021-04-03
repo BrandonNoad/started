@@ -198,7 +198,7 @@ const AppPage = () => {
         );
 
         return (
-            <AppLayout heading="Study Configuration" actions={actions}>
+            <AppLayout title="Config" heading="Study Configuration" actions={actions}>
                 <QuestionnaireBuilder setAnswersToConfigQuestions={setAnswersToConfigQuestions} />
             </AppLayout>
         );
@@ -436,7 +436,11 @@ const AppPage = () => {
     ) : null;
 
     return (
-        <AppLayout heading="Standards for Rigor and Transparency" actions={actions}>
+        <AppLayout
+            title="Standards"
+            heading="Standards for Rigor and Transparency"
+            actions={actions}
+        >
             <Questionnaire
                 questionnaireSections={visibleQuestionnaireSections}
                 responses={responses}
