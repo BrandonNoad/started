@@ -18,7 +18,6 @@ const Seo = ({ title }) => {
     return (
         <Helmet titleTemplate={title ? `%s | ${site.siteMetadata.title}` : null}>
             <title>{title ?? site.siteMetadata.title}</title>
-            <link rel="icon" type="image/png" href="http://example.com/myicon.png"></link>
         </Helmet>
     );
 };

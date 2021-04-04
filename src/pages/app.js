@@ -17,8 +17,10 @@ import {
     VStack,
     useToast
 } from '@chakra-ui/react';
+import { IoColorWandOutline, IoHandRightOutline, IoCloudUploadOutline } from 'react-icons/io5';
 
 import AppLayout from '../layouts/AppLayout';
+import StudyConfiguration from '../components/StudyConfiguration';
 import QuestionnaireBuilder from '../components/QuestionnaireBuilder';
 import Questionnaire from '../components/Questionnaire';
 import {
@@ -49,6 +51,8 @@ const AppPage = () => {
         allQuestionnaireSectionsWithQuestionIdsSorted
     );
 
+    const [isConfigAssistantActive, setIsConfigAssistantActive] = useState(false);
+
     const [visibleQuestionnaireSections, setVisibleQuestionnaireSections] = useState(null);
 
     const [responses, setResponses] = useState({});
@@ -72,6 +76,12 @@ const AppPage = () => {
         nextVisibleQuestionnaireSectionsIndexed,
         setNextVisibleQuestionnaireSectionsIndexed
     ] = useState({});
+
+    useEffect(() => {
+        if (isToggleQuestionnaireSectionsModalOpen) {
+            setNextVisibleQuestionnaireSectionsIndexed(_keyBy(visibleQuestionnaireSections, 'id'));
+        }
+    }, [isToggleQuestionnaireSectionsModalOpen]);
 
     const [studyConfigurationBlobData, setStudyConfigurationBlobData] = useState([
         '## Study Configuration\n\n'
@@ -120,18 +130,48 @@ const AppPage = () => {
 
     // -- Answer Config Questions to Generate Questionnaire
 
-    if (visibleQuestionnaireSections === null) {
-        const handleClickSkipConfiguration = () => {
-            setVisibleQuestionnaireSections(allQuestionnaireSections);
-            setStudyConfigurationBlobData([
-                ...studyConfigurationBlobData,
-                `The study was configured manually.\n`
-            ]);
-        };
+    if (visibleQuestionnaireSections === null && isConfigAssistantActive) {
+        return (
+            <AppLayout title="Assistant" heading="Setup Assistant">
+                <QuestionnaireBuilder setAnswersToConfigQuestions={setAnswersToConfigQuestions} />
+            </AppLayout>
+        );
+    }
 
-        const handleClickLoad = () => {
-            hiddenFileInputRef.current.click();
-        };
+    if (visibleQuestionnaireSections === null) {
+        const configOptions = [
+            {
+                isRecommended: true,
+                icon: IoColorWandOutline,
+                title: 'Setup Assistant',
+                description: 'Answer a series of questions to determine the standards to include.',
+                onClick: () => {
+                    setIsConfigAssistantActive(true);
+                }
+            },
+            {
+                icon: IoHandRightOutline,
+                title: 'Manual',
+                description: 'Manually select the standards to include.',
+                onClick: () => {
+                    setVisibleQuestionnaireSections(allQuestionnaireSections);
+                    setStudyConfigurationBlobData([
+                        ...studyConfigurationBlobData,
+                        `The study was configured manually.\n`
+                    ]);
+                    setIsToggleQuestionnaireSectionsModalOpen(true);
+                }
+            },
+            {
+                icon: IoCloudUploadOutline,
+                title: 'Load File',
+                description:
+                    'Load the standards that were previously saved to a file (e.g. started.json).',
+                onClick: () => {
+                    hiddenFileInputRef.current.click();
+                }
+            }
+        ];
 
         const handleSelectFile = (e) => {
             const fileReader = new FileReader();
@@ -182,24 +222,15 @@ const AppPage = () => {
             };
         };
 
-        const actions = (
-            <>
-                <ButtonGroup colorScheme="gray" spacing={2}>
-                    <Button onClick={handleClickLoad}>Load</Button>
-                    <Button onClick={handleClickSkipConfiguration}>Skip Configuration</Button>
-                </ButtonGroup>
+        return (
+            <AppLayout title="Configuration" heading="Study Configuration">
+                <StudyConfiguration configOptions={configOptions} />
                 <input
                     type="file"
                     ref={hiddenFileInputRef}
                     onChange={handleSelectFile}
                     style={{ display: 'none' }}
                 />
-            </>
-        );
-
-        return (
-            <AppLayout title="Config" heading="Study Configuration" actions={actions}>
-                <QuestionnaireBuilder setAnswersToConfigQuestions={setAnswersToConfigQuestions} />
             </AppLayout>
         );
     }
@@ -255,7 +286,6 @@ const AppPage = () => {
     };
 
     const handleClickToggleQuestionnaireSections = () => {
-        setNextVisibleQuestionnaireSectionsIndexed(_keyBy(visibleQuestionnaireSections, 'id'));
         setIsToggleQuestionnaireSectionsModalOpen(true);
     };
 
@@ -277,7 +307,7 @@ const AppPage = () => {
             <ButtonGroup colorScheme="gray" spacing={2}>
                 <Button onClick={handleClickSave}>Save</Button>
                 <Button onClick={handleClickExport}>Export</Button>
-                <Button onClick={handleClickToggleQuestionnaireSections}>Toggle Standards</Button>
+                <Button onClick={handleClickToggleQuestionnaireSections}>Toggle Sections</Button>
             </ButtonGroup>
             <Modal
                 isOpen={isSaveModalOpen}

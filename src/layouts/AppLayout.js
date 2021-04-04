@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { Box, Flex, Button, Heading } from '@chakra-ui/react';
-import { Image, Transformation } from 'cloudinary-react';
 
 import Seo from '../components/Seo';
 import Logo from '../components/Logo';
