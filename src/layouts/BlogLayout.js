@@ -9,7 +9,15 @@ const BlogLayout = ({ title, children }) => {
     return (
         <>
             <Seo title={title}></Seo>
-            <Flex as="header" align="center" justify="space-between" px={12} pt={6} pb={4} mb={8}>
+            <Flex
+                as="header"
+                align="center"
+                justify="space-between"
+                px={[3, 8, 12]}
+                pt={6}
+                pb={4}
+                mb={8}
+            >
                 <Logo />
                 <Box>
                     <Button colorScheme="gray" variant="ghost" as={Link} to="/about">

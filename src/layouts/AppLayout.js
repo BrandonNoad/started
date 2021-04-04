@@ -9,7 +9,7 @@ const AppLayout = ({ title, heading, actions = null, children }) => (
     <>
         <Seo title={title}></Seo>
         <Box bg="gray.100" height="full" minHeight="100vh">
-            <Box bg="secondary.900" px={12}>
+            <Box bg="secondary.900" px={[3, 8, 12]}>
                 <Flex
                     as="header"
                     align="center"
@@ -44,7 +44,7 @@ const AppLayout = ({ title, heading, actions = null, children }) => (
                     </Flex>
                 </Box>
             </Box>
-            <Box px={12} pb={0}>
+            <Box px={[3, 8, 12]} pb={0}>
                 <Box mt="-100px" as="main">
                     {children}
                 </Box>

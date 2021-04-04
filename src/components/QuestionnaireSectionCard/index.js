@@ -8,7 +8,7 @@ const QuestionnaireSectionCard = ({ title, numQuestions, progress, onClick }) =>
         bg="white"
         borderRadius="md"
         boxShadow="md"
-        p={6}
+        p={[4, 6]}
         _hover={{ cursor: 'pointer', backgroundColor: 'gray.50' }}
     >
         <Box

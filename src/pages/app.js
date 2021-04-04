@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { IoColorWandOutline, IoHandRightOutline, IoCloudUploadOutline } from 'react-icons/io5';
 
+import { useModalSize } from '../util/customHooks';
 import AppLayout from '../layouts/AppLayout';
 import StudyConfiguration from '../components/StudyConfiguration';
 import QuestionnaireBuilder from '../components/QuestionnaireBuilder';
@@ -127,6 +128,8 @@ const AppPage = () => {
     const hiddenFileInputRef = React.useRef(null);
 
     const triggerToast = useToast();
+
+    const modalSize = useModalSize();
 
     // -- Answer Config Questions to Generate Questionnaire
 
@@ -302,168 +305,203 @@ const AppPage = () => {
         });
     };
 
-    const actions = isFileSaverSupported ? (
-        <>
-            <ButtonGroup colorScheme="gray" spacing={2}>
-                <Button onClick={handleClickSave}>Save</Button>
-                <Button onClick={handleClickExport}>Export</Button>
+    const actionsData = [
+        // Save
+        {
+            isFileSaverRequired: true,
+            button: <Button onClick={handleClickSave}>Save</Button>,
+            modal: (
+                <Modal
+                    isOpen={isSaveModalOpen}
+                    onClose={handleCloseSaveModal}
+                    initialFocusRef={saveButtonRef}
+                    size={modalSize}
+                >
+                    <ModalOverlay />
+                    <ModalContent p={6}>
+                        <ModalHeader fontSize="2xl" fontWeight="bold" p={0} mb={4}>
+                            Save Progress
+                        </ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody p={0} mb={6}>
+                            Click{' '}
+                            <Text as="span" fontWeight="semibold">
+                                Save
+                            </Text>{' '}
+                            to download a copy of the questions and responses. If you need to
+                            restore your progress at a later time, you can upload the downloaded
+                            file on the{' '}
+                            <Text as="span" fontWeight="semibold">
+                                Study Configuration
+                            </Text>{' '}
+                            page.
+                        </ModalBody>
+                        <ModalFooter justifyContent="flex-start" p={0}>
+                            <Button
+                                colorScheme="secondary"
+                                onClick={(e) => {
+                                    save();
+                                    handleCloseSaveModal(e);
+                                }}
+                                ref={saveButtonRef}
+                            >
+                                Save
+                            </Button>
+                        </ModalFooter>
+                    </ModalContent>
+                </Modal>
+            )
+        },
+        // Export
+        {
+            isFileSaverRequired: true,
+            button: <Button onClick={handleClickExport}>Export</Button>,
+            modal: (
+                <Modal
+                    isOpen={isExportModalOpen}
+                    onClose={handleCloseExportModal}
+                    initialFocusRef={exportButtonRef}
+                    size={modalSize}
+                >
+                    <ModalOverlay />
+                    <ModalContent p={6}>
+                        <ModalHeader fontSize="2xl" fontWeight="bold" p={0} mb={4}>
+                            Export Data
+                        </ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody p={0} mb={6}>
+                            Click{' '}
+                            <Text as="span" fontWeight="semibold">
+                                Export
+                            </Text>{' '}
+                            to export the{' '}
+                            <Text as="span" fontWeight="semibold">
+                                Standards for Rigor and Transparency
+                            </Text>{' '}
+                            in{' '}
+                            <Link
+                                color="secondary.600"
+                                href="https://www.markdownguide.org/"
+                                isExternal={true}
+                            >
+                                Markdown
+                            </Link>{' '}
+                            format. You can use a{' '}
+                            <Link
+                                color="secondary.600"
+                                href="https://dillinger.io/"
+                                isExternal={true}
+                            >
+                                Markdown editor
+                            </Link>{' '}
+                            or a{' '}
+                            <Link
+                                color="secondary.600"
+                                href="https://pandoc.org/"
+                                isExternal={true}
+                            >
+                                document converter
+                            </Link>{' '}
+                            to easily convert the exported file to PDF or other formats.
+                        </ModalBody>
+                        <ModalFooter justifyContent="flex-start" p={0}>
+                            <Button
+                                colorScheme="secondary"
+                                onClick={(e) => {
+                                    exportData();
+                                    handleCloseExportModal(e);
+                                }}
+                                ref={exportButtonRef}
+                            >
+                                Export
+                            </Button>
+                        </ModalFooter>
+                    </ModalContent>
+                </Modal>
+            )
+        },
+        // Toggle Sections
+        {
+            isFileSaverRequired: false,
+            button: (
                 <Button onClick={handleClickToggleQuestionnaireSections}>Toggle Sections</Button>
-            </ButtonGroup>
-            <Modal
-                isOpen={isSaveModalOpen}
-                onClose={handleCloseSaveModal}
-                initialFocusRef={saveButtonRef}
-                size="xl"
-            >
-                <ModalOverlay />
-                <ModalContent p={6}>
-                    <ModalHeader fontSize="2xl" fontWeight="bold" p={0} mb={4}>
-                        Save Progress
-                    </ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody p={0} mb={6}>
-                        Click{' '}
-                        <Text as="span" fontWeight="semibold">
-                            Save
-                        </Text>{' '}
-                        to download a copy of the questions and responses. If you need to restore
-                        your progress at a later time, you can upload the downloaded file on the{' '}
-                        <Text as="span" fontWeight="semibold">
-                            Study Configuration
-                        </Text>{' '}
-                        page.
-                    </ModalBody>
-                    <ModalFooter justifyContent="flex-start" p={0}>
-                        <Button
-                            colorScheme="secondary"
-                            onClick={(e) => {
-                                save();
-                                handleCloseSaveModal(e);
-                            }}
-                            ref={saveButtonRef}
-                        >
-                            Save
-                        </Button>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal>
-            <Modal
-                isOpen={isExportModalOpen}
-                onClose={handleCloseExportModal}
-                initialFocusRef={exportButtonRef}
-                size="xl"
-            >
-                <ModalOverlay />
-                <ModalContent p={6}>
-                    <ModalHeader fontSize="2xl" fontWeight="bold" p={0} mb={4}>
-                        Export Data
-                    </ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody p={0} mb={6}>
-                        Click{' '}
-                        <Text as="span" fontWeight="semibold">
-                            Export
-                        </Text>{' '}
-                        to export the{' '}
-                        <Text as="span" fontWeight="semibold">
-                            Standards for Rigor and Transparency
-                        </Text>{' '}
-                        in{' '}
-                        <Link
-                            color="secondary.600"
-                            href="https://www.markdownguide.org/"
-                            isExternal={true}
-                        >
-                            Markdown
-                        </Link>{' '}
-                        format. You can use a{' '}
-                        <Link color="secondary.600" href="https://dillinger.io/" isExternal={true}>
-                            Markdown editor
-                        </Link>{' '}
-                        or a{' '}
-                        <Link color="secondary.600" href="https://pandoc.org/" isExternal={true}>
-                            document converter
-                        </Link>{' '}
-                        to easily convert the exported file to PDF or other formats.
-                    </ModalBody>
-                    <ModalFooter justifyContent="flex-start" p={0}>
-                        <Button
-                            colorScheme="secondary"
-                            onClick={(e) => {
-                                exportData();
-                                handleCloseExportModal(e);
-                            }}
-                            ref={exportButtonRef}
-                        >
-                            Export
-                        </Button>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal>
-            <Modal
-                isOpen={isToggleQuestionnaireSectionsModalOpen}
-                onClose={handleCloseToggleQuestionnaireSectionsModal}
-                initialFocusRef={toggleQuestionnaireSectionsButtonRef}
-                size="xl"
-            >
-                <ModalOverlay />
-                <ModalContent p={6}>
-                    <ModalHeader fontSize="2xl" fontWeight="bold" p={0} mb={4}>
-                        Toggle Standards for Rigor and Transparency
-                    </ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody p={0} mb={6}>
-                        <VStack align="flex-start">
-                            {allQuestionnaireSections.map((questionnaireSection) => {
-                                const { id, title } = questionnaireSection;
+            ),
+            modal: (
+                <Modal
+                    isOpen={isToggleQuestionnaireSectionsModalOpen}
+                    onClose={handleCloseToggleQuestionnaireSectionsModal}
+                    initialFocusRef={toggleQuestionnaireSectionsButtonRef}
+                    size={modalSize}
+                >
+                    <ModalOverlay />
+                    <ModalContent p={6}>
+                        <ModalHeader fontSize="2xl" fontWeight="bold" p={0} mb={4}>
+                            Toggle Standards for Rigor and Transparency
+                        </ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody p={0} mb={6}>
+                            <VStack align="flex-start">
+                                {allQuestionnaireSections.map((questionnaireSection) => {
+                                    const { id, title } = questionnaireSection;
 
-                                const isChecked =
-                                    nextVisibleQuestionnaireSectionsIndexed[id] !== undefined;
+                                    const isChecked =
+                                        nextVisibleQuestionnaireSectionsIndexed[id] !== undefined;
 
-                                const onChange = handleToggleQuestionnaireSectionFactory(
-                                    questionnaireSection
-                                );
+                                    const onChange = handleToggleQuestionnaireSectionFactory(
+                                        questionnaireSection
+                                    );
 
-                                return (
-                                    <Checkbox
-                                        key={id}
-                                        colorScheme="secondary"
-                                        isChecked={isChecked}
-                                        onChange={onChange}
-                                    >
-                                        <Text
-                                            as="span"
-                                            fontWeight={isChecked ? 'medium' : 'normal'}
+                                    return (
+                                        <Checkbox
+                                            key={id}
+                                            colorScheme="secondary"
+                                            isChecked={isChecked}
+                                            onChange={onChange}
                                         >
-                                            {title}
-                                        </Text>
-                                    </Checkbox>
-                                );
-                            })}
-                        </VStack>
-                    </ModalBody>
-                    <ModalFooter justifyContent="flex-start" p={0}>
-                        <Button
-                            colorScheme="secondary"
-                            onClick={(e) => {
-                                setVisibleQuestionnaireSections(
-                                    allQuestionnaireSections.filter(
-                                        ({ id }) =>
-                                            nextVisibleQuestionnaireSectionsIndexed[id] !==
-                                            undefined
-                                    )
-                                );
-                                handleCloseToggleQuestionnaireSectionsModal(e);
-                            }}
-                            ref={exportButtonRef}
-                        >
-                            Save
-                        </Button>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal>
-        </>
-    ) : null;
+                                            <Text
+                                                as="span"
+                                                fontWeight={isChecked ? 'medium' : 'normal'}
+                                            >
+                                                {title}
+                                            </Text>
+                                        </Checkbox>
+                                    );
+                                })}
+                            </VStack>
+                        </ModalBody>
+                        <ModalFooter justifyContent="flex-start" p={0}>
+                            <Button
+                                colorScheme="secondary"
+                                onClick={(e) => {
+                                    setVisibleQuestionnaireSections(
+                                        allQuestionnaireSections.filter(
+                                            ({ id }) =>
+                                                nextVisibleQuestionnaireSectionsIndexed[id] !==
+                                                undefined
+                                        )
+                                    );
+                                    handleCloseToggleQuestionnaireSectionsModal(e);
+                                }}
+                                ref={exportButtonRef}
+                            >
+                                Save
+                            </Button>
+                        </ModalFooter>
+                    </ModalContent>
+                </Modal>
+            )
+        }
+    ].filter(({ isFileSaverRequired }) => isFileSaverSupported || !isFileSaverRequired);
+
+    const actions =
+        actionsData.length > 0 ? (
+            <>
+                <ButtonGroup colorScheme="gray" spacing={2}>
+                    {actionsData.map(({ button }) => button)}
+                </ButtonGroup>
+                {actionsData.map(({ modal }) => modal)}
+            </>
+        ) : null;
 
     return (
         <AppLayout

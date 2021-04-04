@@ -46,7 +46,13 @@ const StudyConfigurationCard = ({ isRecommended = false, title, description, ico
                         onClick();
                     }}
                 >
-                    <Heading as="h3" size="md" color="gray.900" _groupHover={{ color: 'black' }}>
+                    <Heading
+                        as="h3"
+                        size="md"
+                        textAlign="left"
+                        color="gray.900"
+                        _groupHover={{ color: 'black' }}
+                    >
                         {title}
                     </Heading>
                 </Box>

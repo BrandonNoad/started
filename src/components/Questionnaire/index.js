@@ -57,7 +57,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
     if (activeQuestionnaireSectionIndex === null) {
         return (
             <Box height="calc(100vh - 220px)" overflowY="auto">
-                <SimpleGrid minChildWidth="480px" spacing={6}>
+                <SimpleGrid columns={[1, null, 2]} spacing={[4, 6]}>
                     {questionnaireSections.map((questionnaireSection) => {
                         const { id, title } = questionnaireSection;
 
@@ -126,7 +126,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
 
     return (
         <Box bg="white" borderRadius="md" boxShadow="md">
-            <Box py={4} px={6} borderBottom="1px" borderBottomColor="gray.200">
+            <Box py={4} px={[4, 6]} borderBottom="1px" borderBottomColor="gray.200">
                 <Flex align="center" justify="space-between">
                     <Heading as="h2" color="gray.900" size="lg">
                         {activeQuestionnaireSection.title}
@@ -146,7 +146,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                     </Box>
                 </Flex>
             </Box>
-            <Box p={6} height="calc(100vh - 295px)" overflowY="auto">
+            <Box p={[4, 6]} height="calc(100vh - 295px)" overflowY="auto">
                 {activeQuestionnaireSection.questionGroups.map(
                     (questionGroup, questionGroupIndex) => (
                         <QuestionGroup

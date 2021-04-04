@@ -5,7 +5,7 @@ import StudyConfigurationCard from '../StudyConfigurationCard';
 
 const StudyConfiguration = ({ configOptions }) => (
     <Box bg="white" borderRadius="md" boxShadow="md">
-        <Box p={6}>
+        <Box p={[4, 6]}>
             <Heading as="h2" fontSize="2xl" fontWeight="bold" mb={5} color="gray.900">
                 How would you like to configure the study?
             </Heading>

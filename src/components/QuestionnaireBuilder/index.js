@@ -17,6 +17,7 @@ import {
     AlertDialogOverlay
 } from '@chakra-ui/react';
 
+import { useModalSize } from '../../util/customHooks';
 import { filterCollection } from '../../util';
 import configQuestions from '../../data/configQuestions';
 
@@ -38,6 +39,8 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
             setAnswersToConfigQuestions(answers);
         }
     }, [questions, answers, setAnswersToConfigQuestions]);
+
+    const modalSize = useModalSize();
 
     if (questions.length === 0) {
         return null;
@@ -121,7 +124,7 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
     return (
         <>
             <Box bg="white" borderRadius="md" boxShadow="md">
-                <Box height="14rem" p={6}>
+                <Box height="14rem" p={[4, 6]}>
                     <form
                         id="flowchart-form"
                         onSubmit={(e) => {
@@ -193,7 +196,7 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
                 isOpen={showAlert}
                 leastDestructiveRef={alertBackButtonRef}
                 onClose={handleCloseAlert}
-                size="xl"
+                size={modalSize}
             >
                 <AlertDialogOverlay>
                     <AlertDialogContent p={6}>
