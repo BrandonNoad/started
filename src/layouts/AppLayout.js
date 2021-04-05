@@ -4,12 +4,15 @@ import { Box, Flex, Button, Heading } from '@chakra-ui/react';
 
 import Seo from '../components/Seo';
 import Logo from '../components/Logo';
+import Footer from '../components/Footer';
+
+const commonPx = [3, 8, 12];
 
 const AppLayout = ({ title, heading, actions = null, children }) => (
     <>
         <Seo title={title}></Seo>
-        <Box bg="gray.100" height="full" minHeight="100vh">
-            <Box bg="secondary.900" px={[3, 8, 12]}>
+        <Flex direction="column" bg="gray.100" minHeight="full">
+            <Box bg="secondary.900" px={commonPx}>
                 <Flex
                     as="header"
                     align="center"
@@ -34,7 +37,7 @@ const AppLayout = ({ title, heading, actions = null, children }) => (
                     </Box>
                 </Flex>
                 <Box height={186}>
-                    <Flex align="center" justify="space-between">
+                    <Flex align="center" justify="space-between" wrap="wrap">
                         <Box>
                             <Heading as="h1" size="xl" color="white">
                                 {heading}
@@ -44,12 +47,13 @@ const AppLayout = ({ title, heading, actions = null, children }) => (
                     </Flex>
                 </Box>
             </Box>
-            <Box px={[3, 8, 12]} pb={0}>
-                <Box mt="-100px" as="main">
-                    {children}
-                </Box>
+            <Box mt="-100px" as="main" px={commonPx}>
+                {children}
             </Box>
-        </Box>
+            <Box px={commonPx} mt="auto">
+                <Footer colors={{ border: 'gray.300', font: 'gray.500' }} />
+            </Box>
+        </Flex>
     </>
 );
 

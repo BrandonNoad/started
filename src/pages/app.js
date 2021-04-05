@@ -162,7 +162,9 @@ const AppPage = () => {
                         ...studyConfigurationBlobData,
                         `The study was configured manually.\n`
                     ]);
-                    setIsToggleQuestionnaireSectionsModalOpen(true);
+                    setTimeout(() => {
+                        setIsToggleQuestionnaireSectionsModalOpen(true);
+                    }, 150);
                 }
             },
             {

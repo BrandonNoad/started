@@ -111,6 +111,15 @@ const colors = {
     }
 };
 
-const theme = { ...extendTheme({ breakpoints }), colors };
+const styles = {
+    global: {
+        // Required  in order to get the footer to stick to the bottom of the page.
+        'html, body, #___gatsby, #gatsby-focus-wrapper': {
+            height: '100%'
+        }
+    }
+};
+
+const theme = { ...extendTheme({ breakpoints, styles }), colors };
 
 export default theme;

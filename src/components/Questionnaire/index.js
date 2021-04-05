@@ -57,7 +57,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
     if (activeQuestionnaireSectionIndex === null) {
         return (
             <Box height="calc(100vh - 220px)" overflowY="auto">
-                <SimpleGrid columns={[1, null, 2]} spacing={[4, 6]}>
+                <SimpleGrid columns={[1, null, 2]} spacing={[4, 5]}>
                     {questionnaireSections.map((questionnaireSection) => {
                         const { id, title } = questionnaireSection;
 
