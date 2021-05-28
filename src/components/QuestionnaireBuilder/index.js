@@ -124,9 +124,9 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
     return (
         <>
             <Box bg="white" borderRadius="md" boxShadow="md">
-                <Box height="14rem" p={[4, 6]}>
+                <Box minHeight="14rem" p={[4, 6]}>
                     <form
-                        id="flowchart-form"
+                        id="setup-assistant-form"
                         onSubmit={(e) => {
                             e.preventDefault();
 
@@ -174,7 +174,7 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
                     <Flex align="center">
                         <Button
                             type="submit"
-                            form="flowchart-form"
+                            form="setup-assistant-form"
                             colorScheme="primary"
                             isDisabled={isNextButtonDisabled}
                         >

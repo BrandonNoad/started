@@ -438,7 +438,7 @@ const AppPage = () => {
                     <ModalOverlay />
                     <ModalContent p={6}>
                         <ModalHeader fontSize="2xl" fontWeight="bold" p={0} mb={4}>
-                            Toggle Standards for Rigor and Transparency
+                            Toggle Sections
                         </ModalHeader>
                         <ModalCloseButton />
                         <ModalBody p={0} mb={6}>
