@@ -20,6 +20,7 @@ export default {
                     question:
                         'Were the following aspects of cough stimuli described (select all that apply)?',
                     labels: [LABEL_ID_TRANSPARENCY],
+                    isMultipleResponsesAllowed: true,
                     responseOptions: [
                         'Type (e.g., citric acid, capsaicin, etc.)',
                         'Concentration',

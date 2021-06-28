@@ -30,6 +30,7 @@ export default {
                     question:
                         'Were the following aspects of any stimuli and/or contrast material utilized described (select all that apply)?',
                     labels: [LABEL_ID_TRANSPARENCY],
+                    isMultipleResponsesAllowed: true,
                     responseOptions: [
                         'Dose',
                         'Type',

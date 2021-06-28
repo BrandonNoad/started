@@ -19,6 +19,7 @@ export default {
                     question:
                         'Were the following aspects of the scanning protocol described (select all that apply)?',
                     labels: [LABEL_ID_TRANSPARENCY],
+                    isMultipleResponsesAllowed: true,
                     responseOptions: [
                         'Intervals of images in seconds',
                         'Structures measured',
