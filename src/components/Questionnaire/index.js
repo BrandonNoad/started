@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SimpleGrid, Box, Flex, Heading, Button } from '@chakra-ui/react';
 
 import InvalidStudy from '../InvalidStudy';
@@ -45,6 +45,8 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
     // useInterval(() => {
     //     localStorage.setItem('responses', JSON.stringify(responses));
     // });
+
+    const questionGroupsContainerEl = useRef(null);
 
     // -- No Questions!
 
@@ -110,6 +112,9 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
         setActiveQuestionnaireSectionIndex(
             (activeQuestionnaireSectionIndex + 1) % questionnaireSections.length
         );
+
+        // Reset scroll position back to the top of the container.
+        questionGroupsContainerEl.current.scrollTo(0, 0);
     };
 
     const handleClickBack = () => {
@@ -146,7 +151,12 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                     </Box>
                 </Flex>
             </Box>
-            <Box p={[4, 6]} height="calc(100vh - 295px)" overflowY="auto">
+            <Box
+                ref={questionGroupsContainerEl}
+                p={[4, 6]}
+                height="calc(100vh - 295px)"
+                overflowY="auto"
+            >
                 {activeQuestionnaireSection.questionGroups.map(
                     (questionGroup, questionGroupIndex) => (
                         <QuestionGroup
