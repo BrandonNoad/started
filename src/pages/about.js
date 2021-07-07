@@ -11,7 +11,7 @@ const contributors = [
     'Catriona Steele',
     'Danielle Brates',
     'Joanne Yee',
-    'Justine Allen',
+    'Justine Dallal York',
     'Matina Balou',
     'Nicole Rogus-Pulia',
     'Pooja Gandhi',
