@@ -17,7 +17,7 @@ const contributors = [
     'Pooja Gandhi',
     'Rebecca Affoo',
     'Renata Mancopes',
-    'Rodolfo Pena Chavez',
+    'Rodolfo Pena',
     'Ryan Burdick',
     'Sana Smaoui',
     'Sophia Werden Abrams',
@@ -30,14 +30,32 @@ const AboutPage = () => (
             The STARTED Framework
         </Heading>
         <Text mb={4}>
-            The newly developed STARTED (<strong>STA</strong>ndards for <strong>R</strong>igor and{' '}
-            <strong>T</strong>ranspar<strong>E</strong>ncy in <strong>D</strong>ysphagia Research)
-            Framework is an evidence-based, minimum set of recommendations for reporting dysphagia
-            research involving human subjects. This interactive, web-based application has been
-            designed to appraise the rigor and transparency of peer-reviewed dysphagia articles. The
-            application allows clinicians and researchers alike to easily determine strengths and
-            weaknesses in design and/or reporting of dysphagia research by asking key questions to
-            assess rigor and transparency across the following categories:
+            The newly developed STARTED (
+            <Text as="span" fontWeight="semibold">
+                STA
+            </Text>
+            ndards for{' '}
+            <Text as="span" fontWeight="semibold">
+                R
+            </Text>
+            igor and{' '}
+            <Text as="span" fontWeight="semibold">
+                T
+            </Text>
+            ranspar
+            <Text as="span" fontWeight="semibold">
+                E
+            </Text>
+            ncy in{' '}
+            <Text as="span" fontWeight="semibold">
+                D
+            </Text>
+            ysphagia Research) Framework is an evidence-based, minimum set of recommendations for
+            reporting dysphagia research involving human subjects. This interactive, web-based
+            application has been designed to appraise the rigor and transparency of peer-reviewed
+            dysphagia articles. The application allows clinicians and researchers alike to easily
+            determine strengths and weaknesses in design and/or reporting of dysphagia research by
+            asking key questions to assess rigor and transparency across the following categories:
         </Text>
         <UnorderedList mb={4}>
             <ListItem>Participants and baseline characteristics</ListItem>
@@ -63,7 +81,7 @@ const AboutPage = () => (
         </Heading>
         <SimpleGrid columns={[3, null, 4, 5, 6]} spacing={5}>
             {contributors.map((name) => (
-                <Box textAlign="center">
+                <Box textAlign="center" key={name}>
                     <Avatar name={name} src="" size="lg" mb={1}></Avatar>
                     <Text fontSize="sm" fontWeight="medium">
                         {name}

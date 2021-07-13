@@ -91,17 +91,14 @@ const QuestionGroup = ({
                 </Heading>
             ) : null}
             {questionGroup.questions.map(
-                (
-                    {
-                        id,
-                        question,
-                        labels,
-                        isMultipleResponsesAllowed = false,
-                        responseOptions,
-                        questionGroups
-                    },
-                    questionIndex
-                ) => {
+                ({
+                    id,
+                    question,
+                    labels,
+                    isMultipleResponsesAllowed = false,
+                    responseOptions,
+                    questionGroups
+                }) => {
                     const InputComponent = isMultipleResponsesAllowed ? Checkbox : Radio;
 
                     const handleChange = (e) => {
@@ -131,35 +128,36 @@ const QuestionGroup = ({
                     };
 
                     return (
-                        <Box key={questionIndex} mb={3}>
+                        <Box key={id} mb={3}>
                             <FormControl as="fieldset">
-                                <Flex align="center" mb={1}>
-                                    <FormLabel as="legend" fontWeight="bold" m={0}>
-                                        <Text as="span" fontSize="md">
+                                <FormLabel as="legend" fontWeight="bold" mb={1}>
+                                    <Box>
+                                        <Text as="span" fontSize="md" mr={2}>
                                             {question}
                                         </Text>
-                                    </FormLabel>
-                                    {labels.map((labelId) => (
-                                        <Tag
-                                            colorScheme="primary"
-                                            variant="outline"
-                                            size="sm"
-                                            ml={2}
-                                        >
-                                            {labelsIndexed[labelId].label}
-                                        </Tag>
-                                    ))}
-                                </Flex>
+                                        {labels.map((labelId) => (
+                                            <Tag
+                                                key={labelId.toString()}
+                                                colorScheme="primary"
+                                                variant="outline"
+                                                size="sm"
+                                                mr={2}
+                                                verticalAlign="text-bottom"
+                                            >
+                                                {labelsIndexed[labelId].label}
+                                            </Tag>
+                                        ))}
+                                    </Box>
+                                </FormLabel>
                                 <VStack align="flex-start" spacing={1}>
                                     {responseOptions.map((responseOption, responseOptionIndex) => {
                                         const isChecked =
                                             responses[id] !== undefined &&
                                             responses[id].includes(responseOptionIndex);
 
-                                        // TODO: Is radio key ok?
                                         return (
                                             <InputComponent
-                                                key={responseOption + responseOptionIndex}
+                                                key={responseOptionIndex.toString()}
                                                 colorScheme="accent.1"
                                                 value={responseOptionIndex}
                                                 isChecked={isChecked}
@@ -179,7 +177,7 @@ const QuestionGroup = ({
                             {questionGroups
                                 ? questionGroups.map((questionGroup, questionGroupIndex) => (
                                       <QuestionGroup
-                                          key={questionGroupIndex}
+                                          key={questionGroupIndex.toString()}
                                           questionGroup={questionGroup}
                                           responses={responses}
                                           respondToQuestion={respondToQuestion}

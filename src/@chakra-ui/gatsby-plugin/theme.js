@@ -16,6 +16,7 @@ const colors = {
     black: '#000',
     white: '#fff',
     red: { 500: '#BA2525' },
+    orange: { 500: '#F97316' },
     blackAlpha: {
         50: 'rgba(0, 0, 0, 0.04)',
         100: 'rgba(0, 0, 0, 0.06)',

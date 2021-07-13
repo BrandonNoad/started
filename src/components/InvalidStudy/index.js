@@ -14,7 +14,7 @@ const InvalidStudy = () => (
                 px={6}
                 borderRadius="sm"
             >
-                <AlertIcon />
+                <AlertIcon color="accent.3.900" />
                 This tool is not appropriate for the study.
             </Alert>
         </Box>

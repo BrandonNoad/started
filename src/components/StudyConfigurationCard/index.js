@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, HStack, Heading, Text, Tag, Square, Icon } from '@chakra-ui/react';
-import { CheckIcon, ChatIcon } from '@chakra-ui/icons';
+import { CheckIcon } from '@chakra-ui/icons';
 
 import ExpandedClickableBox from '../ExpandedClickableBox';
 

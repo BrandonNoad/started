@@ -120,7 +120,6 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
         setShowAlert(false);
     };
 
-    // TODO: will radio/checkbox key be ok?
     return (
         <>
             <Box bg="white" borderRadius="md" boxShadow="md">

@@ -6,24 +6,6 @@ import QuestionnaireSectionCard from '../QuestionnaireSectionCard';
 import QuestionGroup from '../QuestionGroup';
 import { generateProgressDataForQuestionGroups } from '../../util';
 
-// const useInterval = (callback) => {
-//     const savedCallback = useRef();
-
-//     useEffect(() => {
-//         savedCallback.current = callback;
-//     });
-
-//     useEffect(() => {
-//         const tick = () => {
-//             savedCallback.current();
-//         };
-
-//         const intervalId = setInterval(tick, 1000 * 10);
-
-//         return () => clearInterval(intervalId);
-//     }, []);
-// };
-
 const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
     const [activeQuestionnaireSectionIndex, setActiveQuestionnaireSectionIndex] = useState(null);
 
@@ -41,10 +23,6 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
 
         setActiveQuestionnaireSectionIndex(null);
     }, [questionnaireSections]);
-
-    // useInterval(() => {
-    //     localStorage.setItem('responses', JSON.stringify(responses));
-    // });
 
     const questionGroupsContainerEl = useRef(null);
 
@@ -70,8 +48,6 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                                 ? 0
                                 : (progressData[id].numResponses / progressData[id].numQuestions) *
                                   100;
-
-                        const isWarning = false; // answers[id].filter((val) => val === 'No').length > 0;
 
                         return (
                             <QuestionnaireSectionCard
@@ -137,15 +113,15 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                         {activeQuestionnaireSection.title}
                     </Heading>
                     <Box>
-                        <Button colorScheme="primary" onClick={handleClickNextSection}>
+                        <Button
+                            colorScheme="primary"
+                            onClick={handleClickNextSection}
+                            mr={2}
+                            mb={1}
+                        >
                             Next Section
                         </Button>
-                        <Button
-                            colorScheme="gray"
-                            variant="outline"
-                            ml={2}
-                            onClick={handleClickBack}
-                        >
+                        <Button colorScheme="gray" variant="outline" onClick={handleClickBack}>
                             Back
                         </Button>
                     </Box>

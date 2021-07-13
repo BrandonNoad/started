@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Box, Flex, Button, Heading } from '@chakra-ui/react';
+import { Box, Flex, Button, Heading, Badge } from '@chakra-ui/react';
 
 import Seo from '../components/Seo';
 import Logo from '../components/Logo';
@@ -34,10 +34,16 @@ const AppLayout = ({ title, heading, actions = null, children }) => (
                         >
                             About
                         </Button>
+                        <Badge colorScheme="orange" variant="solid" fontSize="md">
+                            Beta
+                        </Badge>
                     </Box>
                 </Flex>
-                <Box height={186}>
-                    <Flex align="center" justify="space-between" wrap="wrap">
+                <Box height={186}></Box>
+            </Box>
+            <Box mt="-186px" as="main" px={commonPx}>
+                <Box>
+                    <Flex align="center" justify="space-between" wrap="wrap" mb={[6, 8, 12]}>
                         <Box>
                             <Heading as="h1" size="xl" color="white">
                                 {heading}
@@ -45,10 +51,8 @@ const AppLayout = ({ title, heading, actions = null, children }) => (
                         </Box>
                         <Box>{actions}</Box>
                     </Flex>
+                    {children}
                 </Box>
-            </Box>
-            <Box mt="-100px" as="main" px={commonPx}>
-                {children}
             </Box>
             <Box px={commonPx} mt="auto">
                 <Footer colors={{ border: 'gray.300', font: 'gray.500' }} />

@@ -71,7 +71,7 @@ const AppPage = () => {
         setIsToggleQuestionnaireSectionsModalOpen
     ] = useState(false);
 
-    const toggleQuestionnaireSectionsButtonRef = useRef(null);
+    const firstQuestionnaireSectionCheckboxRef = useRef(null);
 
     const [
         nextVisibleQuestionnaireSectionsIndexed,
@@ -310,6 +310,7 @@ const AppPage = () => {
     const actionsData = [
         // Save
         {
+            id: 'save',
             isFileSaverRequired: true,
             button: <Button onClick={handleClickSave}>Save</Button>,
             modal: (
@@ -356,6 +357,7 @@ const AppPage = () => {
         },
         // Export
         {
+            id: 'export',
             isFileSaverRequired: true,
             button: <Button onClick={handleClickExport}>Export</Button>,
             modal: (
@@ -424,6 +426,7 @@ const AppPage = () => {
         },
         // Toggle Sections
         {
+            id: 'toggle-sections',
             isFileSaverRequired: false,
             button: (
                 <Button onClick={handleClickToggleQuestionnaireSections}>Toggle Sections</Button>
@@ -432,7 +435,7 @@ const AppPage = () => {
                 <Modal
                     isOpen={isToggleQuestionnaireSectionsModalOpen}
                     onClose={handleCloseToggleQuestionnaireSectionsModal}
-                    initialFocusRef={toggleQuestionnaireSectionsButtonRef}
+                    initialFocusRef={firstQuestionnaireSectionCheckboxRef}
                     size={modalSize}
                 >
                     <ModalOverlay />
@@ -442,39 +445,11 @@ const AppPage = () => {
                         </ModalHeader>
                         <ModalCloseButton />
                         <ModalBody p={0} mb={6}>
-                            <VStack align="flex-start">
-                                {allQuestionnaireSections.map((questionnaireSection) => {
-                                    const { id, title } = questionnaireSection;
+                            <form
+                                id="toggle-sections-form"
+                                onSubmit={(e) => {
+                                    e.preventDefault();
 
-                                    const isChecked =
-                                        nextVisibleQuestionnaireSectionsIndexed[id] !== undefined;
-
-                                    const onChange = handleToggleQuestionnaireSectionFactory(
-                                        questionnaireSection
-                                    );
-
-                                    return (
-                                        <Checkbox
-                                            key={id}
-                                            colorScheme="secondary"
-                                            isChecked={isChecked}
-                                            onChange={onChange}
-                                        >
-                                            <Text
-                                                as="span"
-                                                fontWeight={isChecked ? 'medium' : 'normal'}
-                                            >
-                                                {title}
-                                            </Text>
-                                        </Checkbox>
-                                    );
-                                })}
-                            </VStack>
-                        </ModalBody>
-                        <ModalFooter justifyContent="flex-start" p={0}>
-                            <Button
-                                colorScheme="secondary"
-                                onClick={(e) => {
                                     setVisibleQuestionnaireSections(
                                         allQuestionnaireSections.filter(
                                             ({ id }) =>
@@ -482,9 +457,51 @@ const AppPage = () => {
                                                 undefined
                                         )
                                     );
+
                                     handleCloseToggleQuestionnaireSectionsModal(e);
                                 }}
-                                ref={exportButtonRef}
+                            >
+                                <VStack align="flex-start">
+                                    {allQuestionnaireSections.map((questionnaireSection, idx) => {
+                                        const { id, title } = questionnaireSection;
+
+                                        const isChecked =
+                                            nextVisibleQuestionnaireSectionsIndexed[id] !==
+                                            undefined;
+
+                                        const onChange = handleToggleQuestionnaireSectionFactory(
+                                            questionnaireSection
+                                        );
+
+                                        return (
+                                            <Checkbox
+                                                key={id}
+                                                ref={
+                                                    idx === 0
+                                                        ? firstQuestionnaireSectionCheckboxRef
+                                                        : null
+                                                }
+                                                colorScheme="secondary"
+                                                isChecked={isChecked}
+                                                onChange={onChange}
+                                            >
+                                                <Text
+                                                    as="span"
+                                                    fontWeight={isChecked ? 'medium' : 'normal'}
+                                                >
+                                                    {title}
+                                                </Text>
+                                            </Checkbox>
+                                        );
+                                    })}
+                                </VStack>
+                            </form>
+                        </ModalBody>
+                        <ModalFooter justifyContent="flex-start" p={0}>
+                            <Button
+                                type="submit"
+                                form="toggle-sections-form"
+                                colorScheme="secondary"
                             >
                                 Save
                             </Button>
@@ -499,9 +516,13 @@ const AppPage = () => {
         actionsData.length > 0 ? (
             <>
                 <ButtonGroup colorScheme="gray" spacing={2}>
-                    {actionsData.map(({ button }) => button)}
+                    {actionsData.map(({ id, button }) => (
+                        <React.Fragment key={id}>{button}</React.Fragment>
+                    ))}
                 </ButtonGroup>
-                {actionsData.map(({ modal }) => modal)}
+                {actionsData.map(({ id, modal }) => (
+                    <React.Fragment key={id}>{modal}</React.Fragment>
+                ))}
             </>
         ) : null;
 
