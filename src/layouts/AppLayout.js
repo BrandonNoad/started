@@ -31,6 +31,7 @@ const AppLayout = ({ title, heading, actions = null, children }) => (
                             _hover={{ color: 'white', backgroundColor: 'secondary.800' }}
                             as={Link}
                             to="/about"
+                            mr={2}
                         >
                             About
                         </Button>

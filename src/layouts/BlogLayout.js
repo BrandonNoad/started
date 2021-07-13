@@ -24,7 +24,7 @@ const BlogLayout = ({ title, children }) => {
                 >
                     <Logo />
                     <Box>
-                        <Button colorScheme="gray" variant="ghost" as={Link} to="/about">
+                        <Button colorScheme="gray" variant="ghost" as={Link} to="/about" mr={2}>
                             About
                         </Button>
                         <Badge colorScheme="orange" variant="solid" fontSize="md">
