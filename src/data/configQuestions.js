@@ -11,7 +11,7 @@ import {
     QUESTIONNAIRE_SECTION_ID_NASAL_CANNULA_AIRFLOW_RESPIRATORY_INDUCTANCE_PLETHYSMOGRAPHY,
     QUESTIONNAIRE_SECTION_ID_SEMG,
     QUESTIONNAIRE_SECTION_ID_INDUCED_REFLEXIVE_COUGH_TESTING_PNEUMOTACHOGRAPH,
-    QUESTIONNAIRE_SECTION_ID_SCINTOGRAPHY,
+    QUESTIONNAIRE_SECTION_ID_SCINTIGRAPHY,
     QUESTIONNAIRE_SECTION_ID_ULTRASOUND_ULTRASONOGRAPHY,
     QUESTIONNAIRE_SECTION_ID_CT_320_ROW_AREA_DETECTOR_SCAN,
     QUESTIONNAIRE_SECTION_ID_NEUROIMAGING,
@@ -102,7 +102,7 @@ export default [
                                                             'Nasal Cannula Airflow / Respiratory Inductance Plethysmography',
                                                             'Surface Electromyography (sEMG)',
                                                             'Induced Reflexive Cough Testing / Pneumotachograph',
-                                                            'Scintography',
+                                                            'Scintigraphy',
                                                             'Ultrasound / Ultrasonography',
                                                             'Computed Tomography / 320-Row Area Detector Scan ',
                                                             'Neuroimaging (MRI, fMRI, MEG)',
@@ -137,7 +137,7 @@ export default [
                                                             },
                                                             {
                                                                 filter: 6,
-                                                                id: QUESTIONNAIRE_SECTION_ID_SCINTOGRAPHY
+                                                                id: QUESTIONNAIRE_SECTION_ID_SCINTIGRAPHY
                                                             },
                                                             {
                                                                 filter: 7,

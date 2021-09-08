@@ -1,13 +1,13 @@
 import {
-    QUESTIONNAIRE_SECTION_ID_SCINTOGRAPHY,
+    QUESTIONNAIRE_SECTION_ID_SCINTIGRAPHY,
     LABEL_ID_TRANSPARENCY,
     LABEL_ID_RIGOR
 } from '../../constants';
 import commonInstrumentationQuestions from '../commonInstrumentationQuestions';
 
 export default {
-    id: QUESTIONNAIRE_SECTION_ID_SCINTOGRAPHY,
-    title: 'Scintography',
+    id: QUESTIONNAIRE_SECTION_ID_SCINTIGRAPHY,
+    title: 'Scintigraphy',
     questionGroups: [
         {
             questions: ['a', 'c', 'd', 'e', 'g', 'h', 'i', 'j'].map(

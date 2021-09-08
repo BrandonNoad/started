@@ -18,7 +18,7 @@ export default {
         question:
             'If the participant was able to visualize their physiology during utilization of instrumentation, was this reported on?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     c: {
         question: 'Were operational definitions for measurements/outcomes reported?',
@@ -175,7 +175,7 @@ export default {
         question:
             'If a non-validated scale was utilized, were procedures described for reproducibility?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     o: {
         question:

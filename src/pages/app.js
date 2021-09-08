@@ -67,8 +67,8 @@ const AppPage = () => {
     const exportButtonRef = useRef(null);
 
     const [
-        isToggleQuestionnaireSectionsModalOpen,
-        setIsToggleQuestionnaireSectionsModalOpen
+        isModifyQuestionnaireSectionsModalOpen,
+        setIsModifyQuestionnaireSectionsModalOpen
     ] = useState(false);
 
     const firstQuestionnaireSectionCheckboxRef = useRef(null);
@@ -79,10 +79,10 @@ const AppPage = () => {
     ] = useState({});
 
     useEffect(() => {
-        if (isToggleQuestionnaireSectionsModalOpen) {
+        if (isModifyQuestionnaireSectionsModalOpen) {
             setNextVisibleQuestionnaireSectionsIndexed(_keyBy(visibleQuestionnaireSections, 'id'));
         }
-    }, [isToggleQuestionnaireSectionsModalOpen]);
+    }, [isModifyQuestionnaireSectionsModalOpen]);
 
     const [studyConfigurationBlobData, setStudyConfigurationBlobData] = useState([
         '## Study Configuration\n\n'
@@ -163,7 +163,7 @@ const AppPage = () => {
                         `The study was configured manually.\n`
                     ]);
                     setTimeout(() => {
-                        setIsToggleQuestionnaireSectionsModalOpen(true);
+                        setIsModifyQuestionnaireSectionsModalOpen(true);
                     }, 150);
                 }
             },
@@ -290,15 +290,15 @@ const AppPage = () => {
         setIsExportModalOpen(false);
     };
 
-    const handleClickToggleQuestionnaireSections = () => {
-        setIsToggleQuestionnaireSectionsModalOpen(true);
+    const handleClickModifyQuestionnaireSections = () => {
+        setIsModifyQuestionnaireSectionsModalOpen(true);
     };
 
-    const handleCloseToggleQuestionnaireSectionsModal = () => {
-        setIsToggleQuestionnaireSectionsModalOpen(false);
+    const handleCloseModifyQuestionnaireSectionsModal = () => {
+        setIsModifyQuestionnaireSectionsModalOpen(false);
     };
 
-    const handleToggleQuestionnaireSectionFactory = (questionnaireSection) => (e) => {
+    const handleModifyQuestionnaireSectionFactory = (questionnaireSection) => (e) => {
         const isChecked = e.target.checked;
 
         setNextVisibleQuestionnaireSectionsIndexed({
@@ -424,29 +424,29 @@ const AppPage = () => {
                 </Modal>
             )
         },
-        // Toggle Sections
+        // Modify Sections
         {
-            id: 'toggle-sections',
+            id: 'modify-sections',
             isFileSaverRequired: false,
             button: (
-                <Button onClick={handleClickToggleQuestionnaireSections}>Toggle Sections</Button>
+                <Button onClick={handleClickModifyQuestionnaireSections}>Modify Sections</Button>
             ),
             modal: (
                 <Modal
-                    isOpen={isToggleQuestionnaireSectionsModalOpen}
-                    onClose={handleCloseToggleQuestionnaireSectionsModal}
+                    isOpen={isModifyQuestionnaireSectionsModalOpen}
+                    onClose={handleCloseModifyQuestionnaireSectionsModal}
                     initialFocusRef={firstQuestionnaireSectionCheckboxRef}
                     size={modalSize}
                 >
                     <ModalOverlay />
                     <ModalContent p={6}>
                         <ModalHeader fontSize="2xl" fontWeight="bold" p={0} mb={4}>
-                            Toggle Sections
+                            Modify Sections
                         </ModalHeader>
                         <ModalCloseButton />
                         <ModalBody p={0} mb={6}>
                             <form
-                                id="toggle-sections-form"
+                                id="modify-sections-form"
                                 onSubmit={(e) => {
                                     e.preventDefault();
 
@@ -458,7 +458,7 @@ const AppPage = () => {
                                         )
                                     );
 
-                                    handleCloseToggleQuestionnaireSectionsModal(e);
+                                    handleCloseModifyQuestionnaireSectionsModal(e);
                                 }}
                             >
                                 <VStack align="flex-start">
@@ -469,7 +469,7 @@ const AppPage = () => {
                                             nextVisibleQuestionnaireSectionsIndexed[id] !==
                                             undefined;
 
-                                        const onChange = handleToggleQuestionnaireSectionFactory(
+                                        const onChange = handleModifyQuestionnaireSectionFactory(
                                             questionnaireSection
                                         );
 
@@ -500,7 +500,7 @@ const AppPage = () => {
                         <ModalFooter justifyContent="flex-start" p={0}>
                             <Button
                                 type="submit"
-                                form="toggle-sections-form"
+                                form="modify-sections-form"
                                 colorScheme="secondary"
                             >
                                 Save

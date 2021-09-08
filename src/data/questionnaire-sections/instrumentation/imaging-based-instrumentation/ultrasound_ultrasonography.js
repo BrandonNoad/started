@@ -14,7 +14,7 @@ export default {
             )
         },
         {
-            heading: 'Dye',
+            heading: 'Topical Applications',
             questions: ['p'].map((key) => commonInstrumentationQuestions[key])
         },
         {

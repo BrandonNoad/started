@@ -14,7 +14,7 @@ export default {
                     question:
                         'Was the swallowing stimuli (e.g., bolus types) administration protocol detailed?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,

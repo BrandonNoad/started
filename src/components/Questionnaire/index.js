@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { SimpleGrid, Box, Flex, Heading, Button } from '@chakra-ui/react';
+import { SimpleGrid, Box, Flex, Heading, Button, Text } from '@chakra-ui/react';
 
 import InvalidStudy from '../InvalidStudy';
 import QuestionnaireSectionCard from '../QuestionnaireSectionCard';
@@ -130,7 +130,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
             <Box
                 ref={questionGroupsContainerEl}
                 p={[4, 6]}
-                height="calc(100vh - 295px)"
+                height="calc(100vh - 343px)"
                 overflowY="auto"
             >
                 {activeQuestionnaireSection.questionGroups.map(
@@ -143,6 +143,11 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                         />
                     )
                 )}
+            </Box>
+            <Box textAlign="right" px={[4, 6]} py={[2, 3]}>
+                <Text as="span" fontWeight="semibold">
+                    Section {activeQuestionnaireSectionIndex + 1} of {questionnaireSections.length}
+                </Text>
             </Box>
         </Box>
     );

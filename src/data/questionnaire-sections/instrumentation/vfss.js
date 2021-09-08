@@ -41,7 +41,7 @@ export default {
                     question:
                         'If a non-validated scale was utilized, were procedures described for reproducibility?',
                     labels: [LABEL_ID_TRANSPARENCY, LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No']
+                    responseOptions: ['Yes', 'No', 'N/A']
                 },
                 {
                     question:

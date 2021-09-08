@@ -12,7 +12,7 @@ export default {
             questions: [
                 {
                     question:
-                        'Did the study report any of the following items relevant to the participant characteristics?',
+                        'Which of the following items relevant to the participant characteristics were reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     isMultipleResponsesAllowed: true,
                     responseOptions: [
@@ -23,7 +23,8 @@ export default {
                         'Ethnicity',
                         'Socioeconomic status',
                         'Living status',
-                        'Primary language spoken'
+                        'Primary language spoken',
+                        'N/A'
                     ]
                 },
                 {
@@ -108,7 +109,7 @@ export default {
                                     question:
                                         'If there were subgroups within the healthy participants, were these described?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 }
                             ]
                         }

@@ -11,7 +11,7 @@ import otherSensorBasedInstrumentation from './instrumentation/otherSensorBasedI
 import vfss from './instrumentation/vfss';
 import computedTomography_320RowAreaDetectorScan from './instrumentation/imaging-based-instrumentation/computedTomography_320RowAreaDetectorScan';
 import neuroimaging from './instrumentation/imaging-based-instrumentation/neuroimaging';
-import scintography from './instrumentation/imaging-based-instrumentation/scintography';
+import scintigraphy from './instrumentation/imaging-based-instrumentation/scintigraphy';
 import ultrasound_ultrasonography from './instrumentation/imaging-based-instrumentation/ultrasound_ultrasonography';
 import hrpm from './instrumentation/sensor-based-instrumentation/hrpm';
 import inducedReflexiveCoughTesting_pneumotachograph from './instrumentation/sensor-based-instrumentation/inducedReflexiveCoughTesting_pneumotachograph';
@@ -44,7 +44,7 @@ export default [
     { ...vfss, order: 5 },
     { ...computedTomography_320RowAreaDetectorScan, order: 15 },
     { ...neuroimaging, order: 16 },
-    { ...scintography, order: 13 },
+    { ...scintigraphy, order: 13 },
     { ...ultrasound_ultrasonography, order: 14 },
     { ...hrpm, order: 8 },
     { ...inducedReflexiveCoughTesting_pneumotachograph, order: 12 },
