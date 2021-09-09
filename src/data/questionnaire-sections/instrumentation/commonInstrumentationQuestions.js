@@ -160,7 +160,7 @@ export default {
                         question:
                             'Were ratings of the recorded signals made at the time of evaluation or after the evaluation?',
                         labels: [LABEL_ID_RIGOR],
-                        responseOptions: ['At the time of evaluation', 'After the evaluation']
+                        responseOptions: ['Yes', 'No']
                     }
                 ]
             }
