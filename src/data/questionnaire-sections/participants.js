@@ -39,7 +39,7 @@ export default {
                 },
                 {
                     question: 'Were inclusion criteria defined?',
-                    labels: [],
+                    labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 },
                 {

@@ -185,7 +185,7 @@ export default {
                     question:
                         'If there was more than one clinician administering treatment, was the training protocol to ensure consistency reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
+                    responseOptions: ['Yes', 'No', 'N/A']
                 }
             ]
         }

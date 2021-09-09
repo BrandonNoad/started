@@ -15,9 +15,7 @@ export default {
             questions: ['p', 'q'].map((key) => commonInstrumentationQuestions[key])
         },
         {
-            questions: ['r', 's', 't', 'u', 'v', 'w'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
+            questions: ['r', 't', 'u', 'v', 'w'].map((key) => commonInstrumentationQuestions[key])
         }
     ]
 };

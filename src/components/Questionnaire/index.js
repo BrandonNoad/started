@@ -45,7 +45,7 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
 
                         const progress =
                             numQuestions === 0
-                                ? 0
+                                ? 100
                                 : (progressData[id].numResponses / progressData[id].numQuestions) *
                                   100;
 

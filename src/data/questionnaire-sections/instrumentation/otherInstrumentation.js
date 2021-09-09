@@ -7,7 +7,7 @@ export default {
     questionGroups: [
         {
             // TODO: Add N/As
-            questions: ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
+            questions: ['b', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
                 (key) => commonInstrumentationQuestions[key]
             )
         }

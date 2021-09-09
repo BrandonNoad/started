@@ -20,7 +20,7 @@ export default {
         {
             questions: [
                 {
-                    question: 'Was a transducer used?',
+                    question: 'Was the type of the transducer (probe) reported?',
                     labels: [],
                     responseOptions: ['Yes', 'No'],
                     questionGroups: [
@@ -56,11 +56,6 @@ export default {
                 },
                 {
                     question: 'Was the data collected vs data analyzed reported?',
-                    labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
-                },
-                {
-                    question: 'Was the frame rate reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 }

@@ -102,7 +102,7 @@ export default {
                 {
                     question: 'Were the participants blinded to their condition?',
                     labels: [LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No']
+                    responseOptions: ['Yes', 'No', 'Not reported']
                 },
                 {
                     question: 'Was drop-out (attrition) rate reported?',

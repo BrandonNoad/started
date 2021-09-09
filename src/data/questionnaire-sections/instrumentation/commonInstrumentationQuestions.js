@@ -11,7 +11,8 @@ export default {
         responseOptions: [
             'Structures of interest (e.g., lips, tongue, larynx, cervical esophagus, etc.)',
             'Angles/Views (e.g., lateral, sagittal, etc.)',
-            'Method/accessories to optimize positioning (e.g., wedge, pillow, etc.) or measures (e.g., nose plugs)'
+            'Method/accessories to optimize positioning (e.g., wedge, pillow, etc.) or measures (e.g., nose plugs)',
+            'None of the above options were reported on'
         ]
     },
     b: {
@@ -159,7 +160,7 @@ export default {
                         question:
                             'Were ratings of the recorded signals made at the time of evaluation or after the evaluation?',
                         labels: [LABEL_ID_RIGOR],
-                        responseOptions: ['Yes', 'No']
+                        responseOptions: ['At the time of evaluation', 'After the evaluation']
                     }
                 ]
             }
