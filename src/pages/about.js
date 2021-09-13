@@ -17,7 +17,7 @@ const contributors = [
     'Pooja Gandhi',
     'Rebecca Affoo',
     'Renata Mancopes',
-    'Rodolfo Pena',
+    'Rodolfo Peña-Chávez',
     'Ryan Burdick',
     'Sana Smaoui',
     'Sophia Werden Abrams',
