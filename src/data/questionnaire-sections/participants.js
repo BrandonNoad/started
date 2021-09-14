@@ -22,7 +22,7 @@ export default {
                         'Race',
                         'Ethnicity',
                         'Socioeconomic status',
-                        'Living status',
+                        'Place of residence (community, nursing home, in hospital, etc.)',
                         'Primary language spoken',
                         'N/A'
                     ]
@@ -68,7 +68,8 @@ export default {
                                     responseOptions: ['Yes', 'No']
                                 },
                                 {
-                                    question: 'Was the reliability of assessment reported?',
+                                    question:
+                                        'Were citations regarding reliability of the assessment method provided?',
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
                                 },
@@ -130,7 +131,6 @@ export default {
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     isMultipleResponsesAllowed: true,
                                     responseOptions: [
-                                        'Details of medical diagnosis',
                                         'Primary medical diagnosis',
                                         'Time since medical diagnosis',
                                         'Stage or severity of disease',

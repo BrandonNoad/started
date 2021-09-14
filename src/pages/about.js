@@ -50,7 +50,7 @@ const AboutPage = () => (
             <Text as="span" fontWeight="semibold">
                 D
             </Text>
-            ysphagia Research) Framework is an evidence-based, minimum set of recommendations for
+            ysphagia Research) Framework is an evidence-based, preferred set of recommendations for
             reporting dysphagia research involving human subjects. This interactive, web-based
             application has been designed to appraise the rigor and transparency of peer-reviewed
             dysphagia articles. The application allows clinicians and researchers alike to easily

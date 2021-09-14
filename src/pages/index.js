@@ -18,7 +18,7 @@ const IndexPage = () => (
             </Container>
             <Container maxWidth="2xl" centerContent>
                 <Text color="gray.500" fontWeight="medium" fontSize="xl" align="center" mb={8}>
-                    The STARTED Framework is an evidence-based, minimum set of recommendations for
+                    The STARTED Framework is an evidence-based, preferred set of recommendations for
                     reporting and reviewing dysphagia research involving human subjects.
                 </Text>
                 <Box>
