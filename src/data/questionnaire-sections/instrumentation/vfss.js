@@ -19,13 +19,6 @@ export default {
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 },
-                commonInstrumentationQuestions.l,
-                {
-                    question:
-                        'Were standard definitions used (i.e. well-defined measures/parameters)?',
-                    labels: [LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No']
-                },
                 commonInstrumentationQuestions.m
             ]
         },
