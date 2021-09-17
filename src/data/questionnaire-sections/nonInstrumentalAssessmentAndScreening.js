@@ -90,16 +90,15 @@ export default {
                                                         'Was sensitivity/specificity data reported?',
                                                     labels: [LABEL_ID_TRANSPARENCY],
                                                     responseOptions: ['Yes', 'No', 'N/A']
-                                                },
-                                                {
-                                                    question:
-                                                        'Were all outcomes of the tool listed and described?',
-                                                    labels: [LABEL_ID_TRANSPARENCY],
-                                                    responseOptions: ['Yes', 'No']
                                                 }
                                             ]
                                         }
                                     ]
+                                },
+                                {
+                                    question: 'Were all outcomes of the tool listed and described?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
+                                    responseOptions: ['Yes', 'No']
                                 },
                                 {
                                     question:
