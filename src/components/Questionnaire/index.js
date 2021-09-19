@@ -41,13 +41,16 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                     {questionnaireSections.map((questionnaireSection) => {
                         const { id, title } = questionnaireSection;
 
-                        const numQuestions = progressData[id]?.numQuestions ?? 0;
+                        const numQuestions = progressData[id]?.numQuestions ?? null;
 
-                        const progress =
-                            numQuestions === 0
-                                ? 100
-                                : (progressData[id].numResponses / progressData[id].numQuestions) *
-                                  100;
+                        let progress = 0;
+
+                        if (progressData[id] !== undefined) {
+                            progress =
+                                numQuestions === 0
+                                    ? 100
+                                    : (progressData[id].numResponses / numQuestions) * 100;
+                        }
 
                         return (
                             <QuestionnaireSectionCard
