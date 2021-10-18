@@ -1,5 +1,14 @@
 import React from 'react';
-import { SimpleGrid, Box, Heading, Text, UnorderedList, ListItem, Avatar } from '@chakra-ui/react';
+import {
+    SimpleGrid,
+    Box,
+    Heading,
+    Text,
+    UnorderedList,
+    ListItem,
+    Avatar,
+    Link
+} from '@chakra-ui/react';
 
 import BlogLayout from '../layouts/BlogLayout';
 
@@ -75,6 +84,18 @@ const AboutPage = () => (
             manuscript or research study that meet minimum reporting standards as well as aspects
             where greater detail is needed. Manuscripts are currently in preparation that will
             further describe the framework and provide examples of its utilization.
+        </Text>
+        <Text mb={4}>
+            If you have questions, comments, or feedback about the STARTED Framework, please email
+            us at{' '}
+            <Link
+                color="secondary.600"
+                href="mailto:startedcollaborative@gmail.com"
+                isExternal={true}
+            >
+                startedcollaborative@gmail.com
+            </Link>
+            .
         </Text>
         <Heading as="h2" size="xl" color="gray.900" mb={5}>
             Contributors
