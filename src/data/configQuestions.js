@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from '@chakra-ui/react';
+
 import {
     QUESTIONNAIRE_SECTION_ID_PARTICIPANTS,
     QUESTIONNAIRE_SECTION_ID_UNIVERSALLY_APPLICABLE_QUESTIONS,
@@ -20,6 +23,7 @@ import {
     QUESTIONNAIRE_SECTION_ID_OTHER_INSTRUMENTATION,
     QUESTIONNAIRE_SECTION_ID_PROM
 } from './questionnaire-sections/constants';
+import { FILTER_TYPE_SOME } from '../util';
 
 export default [
     {
@@ -164,7 +168,33 @@ export default [
                                                                 id: QUESTIONNAIRE_SECTION_ID_OTHER_INSTRUMENTATION
                                                             }
                                                         ],
-                                                        questionGroups: []
+                                                        questionGroups: [],
+                                                        additionalInformation: [
+                                                            {
+                                                                filter: {
+                                                                    type: FILTER_TYPE_SOME,
+                                                                    values: [10, 11, 12]
+                                                                },
+                                                                value: (
+                                                                    <>
+                                                                        The framework does not
+                                                                        include the type of
+                                                                        instrumentation used in the
+                                                                        study. If you think it
+                                                                        should be added, please
+                                                                        email us at{' '}
+                                                                        <Link
+                                                                            color="secondary.600"
+                                                                            href="mailto:startedcollaborative@gmail.com"
+                                                                            isExternal={true}
+                                                                        >
+                                                                            startedcollaborative@gmail.com
+                                                                        </Link>
+                                                                        .
+                                                                    </>
+                                                                )
+                                                            }
+                                                        ]
                                                     }
                                                 ]
                                             }

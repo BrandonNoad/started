@@ -9,6 +9,11 @@ import {
     Radio,
     Checkbox,
     Text,
+    Alert,
+    AlertIcon,
+    VisuallyHidden,
+    AlertTitle,
+    AlertDescription,
     AlertDialog,
     AlertDialogBody,
     AlertDialogFooter,
@@ -21,6 +26,16 @@ import { useModalSize } from '../../util/customHooks';
 import { filterCollection } from '../../util';
 import configQuestions from '../../data/configQuestions';
 
+const AdditionalInformationAlert = ({ value }) => (
+    <Alert colorScheme="secondary">
+        <AlertIcon />
+        <VisuallyHidden>
+            <AlertTitle>Alert!</AlertTitle>
+        </VisuallyHidden>
+        <AlertDescription>{value}</AlertDescription>
+    </Alert>
+);
+
 const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
     const [questions, setQuestions] = useState(configQuestions);
 
@@ -29,6 +44,8 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
     const [responses, setResponses] = useState([]);
 
     const [answers, setAnswers] = useState([]);
+
+    const [additionalInformation, setAdditionalInformation] = useState([]);
 
     const [showAlert, setShowAlert] = useState(false);
 
@@ -39,6 +56,22 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
             setAnswersToConfigQuestions(answers);
         }
     }, [questions, answers, setAnswersToConfigQuestions]);
+
+    useEffect(() => {
+        const nextAdditionalInformation =
+            questions.length > 0
+                ? filterCollection(
+                      // Add id values to use as the React list item "keys".
+                      (questions[0].additionalInformation ?? []).map((item, idx) => ({
+                          ...item,
+                          id: idx
+                      })),
+                      responses
+                  )
+                : [];
+
+        setAdditionalInformation(nextAdditionalInformation);
+    }, [responses, setAdditionalInformation]);
 
     const modalSize = useModalSize();
 
@@ -124,6 +157,13 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
         <>
             <Box bg="white" borderRadius="md" boxShadow="md">
                 <Box minHeight="14rem" p={[4, 6]}>
+                    {additionalInformation.length > 0 ? (
+                        <VStack mb={[3, 5]}>
+                            {additionalInformation.map(({ id, value }) => (
+                                <AdditionalInformationAlert key={id.toString()} value={value} />
+                            ))}
+                        </VStack>
+                    ) : null}
                     <form
                         id="setup-assistant-form"
                         onSubmit={(e) => {

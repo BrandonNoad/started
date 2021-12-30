@@ -7,9 +7,9 @@ import { labels } from '../data/questionnaire-sections';
 
 const labelsIndexed = _keyBy(labels, 'id');
 
-const FILTER_TYPE_SOME = 'some';
+export const FILTER_TYPE_SOME = 'some';
 
-const FILTER_TYPE_EVERY = 'every';
+export const FILTER_TYPE_EVERY = 'every';
 
 export const isItemIncluded = (responses) => (item) => {
     if (item.filter === undefined || item.filter === true) {
