@@ -25,7 +25,9 @@ const QuestionnaireSectionCard = ({ title, numQuestions, progress, onClick }) =>
             </Heading>
         </Box>
         <Text fontWeight="semibold" fontSize="sm" color="gray.600" mb={2}>
-            {numQuestions && `${numQuestions} ${numQuestions === 1 ? 'Question' : 'Questions'}`}
+            {numQuestions !== null
+                ? `${numQuestions} ${numQuestions === 1 ? 'Question' : 'Questions'}`
+                : null}
         </Text>
         <Progress
             hasStripe
