@@ -12,7 +12,7 @@ This interactive, web-based application has been designed to enhance the accessi
 -   Dysphagia treatment
 -   Patient reported outcome measures
 
-The application can be used when preparing manuscripts for submission, for critical appraisal and review activities, or during study design. Upon completion of the checklist questions, the software will output a report identifying aspects of a manuscript or research study that meet minimum reporting standards as well as aspects where greater detail is needed. Manuscripts are currently in preparation that will further describe the framework and provide examples of its utilization.
+The application can be used when preparing manuscripts for submission, for critical appraisal and review activities, or during study design. Upon completion of the checklist questions, the software will output a report of the questions and responses. Manuscripts are currently in preparation that will further describe the framework and provide examples of its utilization.
 
 ## Contributors
 

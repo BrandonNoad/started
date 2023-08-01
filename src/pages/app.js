@@ -380,7 +380,7 @@ const AppPage = () => {
                             </Text>{' '}
                             to export the{' '}
                             <Text as="span" fontWeight="semibold">
-                                Standards for Rigor and Transparency
+                                questions and responses
                             </Text>{' '}
                             in{' '}
                             <Link
@@ -527,11 +527,7 @@ const AppPage = () => {
         ) : null;
 
     return (
-        <AppLayout
-            title="Standards"
-            heading="Standards for Rigor and Transparency"
-            actions={actions}
-        >
+        <AppLayout title="Questionnaire" heading="FRONTIERS" actions={actions}>
             <Questionnaire
                 questionnaireSections={visibleQuestionnaireSections}
                 responses={responses}
