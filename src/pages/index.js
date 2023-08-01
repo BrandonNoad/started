@@ -9,17 +9,18 @@ const IndexPage = () => (
         <Box>
             <Container maxWidth="3xl">
                 <Heading as="h1" color="gray.900" size="3xl" align="center" mb={10}>
-                    Standards for
+                    Framework for
                     <br />
                     Rigor and Transparency
                     <br />
-                    in Dysphagia Research
+                    in Research on Swallowing
                 </Heading>
             </Container>
             <Container maxWidth="2xl" centerContent>
                 <Text color="gray.500" fontWeight="medium" fontSize="xl" align="center" mb={8}>
-                    The STARTED Framework is an evidence-based, preferred set of recommendations for
-                    reporting and reviewing dysphagia research involving human subjects.
+                    The FRONTIERS Framework is a tool for dysphagia researchers and research
+                    consumers to promote rigor and transparency in study design and reporting,
+                    specific to dysphagia research.
                 </Text>
                 <Box>
                     <Button colorScheme="primary" mr={4} as={Link} to="/app">

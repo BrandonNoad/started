@@ -48,7 +48,7 @@ export default {
         responseOptions: ['Yes', 'No']
     },
     h: {
-        question: 'Was more than 1 rater included?',
+        question: 'Was more than one rater included?',
         labels: [LABEL_ID_RIGOR],
         responseOptions: ['Yes', 'No'],
         questionGroups: [

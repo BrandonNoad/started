@@ -62,7 +62,7 @@ export default {
                     ]
                 },
                 {
-                    question: 'Was there more than one rater?',
+                    question: 'Was more than one rater included?',
                     labels: [LABEL_ID_RIGOR],
                     responseOptions: ['Yes', 'No'],
                     questionGroups: [
@@ -70,12 +70,12 @@ export default {
                             filter: 0,
                             questions: [
                                 {
-                                    question: 'Were inter-rater reliability statistics reported?',
+                                    question: 'Was inter-rater reliability reported?',
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
                                 },
                                 {
-                                    question: 'Were intra-rater reliability statistics reported?',
+                                    question: 'Was intra-rater reliability reported?',
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
                                 },

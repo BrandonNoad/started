@@ -1,6 +1,8 @@
-# The STARTED Framework
+# The FRONTIERS Framework
 
-The newly developed STARTED (**STA**ndards for **R**igor and **T**ranspar**E**ncy in **D**ysphagia Research) Framework is an evidence-based, preferred set of recommendations for reporting dysphagia research involving human subjects. This interactive, web-based application has been designed to appraise the rigor and transparency of peer-reviewed dysphagia articles. The application allows clinicians and researchers alike to easily determine strengths and weaknesses in design and/or reporting of dysphagia research by asking key questions to assess rigor and transparency across the following categories:
+The newly developed FRONTIERS (**F**ramework for **R**ig**O**r a**N**d **T**ransparency **I**n R**E**sea**R**ch on **S**wallowing) Framework is a tool for dysphagia researchers and research consumers to promote rigor and transparency in study design and reporting, specific to dysphagia research.
+
+This interactive, web-based application has been designed to enhance the accessibility and usability of the FRONTIERS Framework. The application allows clinicians and researchers alike to easily plan for and appraise rigor and transparency in study design and reporting by asking key questions across the following categories:
 
 -   Participants and baseline characteristics
 -   Non-instrumental assessment and screening

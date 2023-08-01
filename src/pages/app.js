@@ -171,7 +171,7 @@ const AppPage = () => {
                 icon: IoCloudUploadOutline,
                 title: 'Load File',
                 description:
-                    'Load the standards that were previously saved to a file (e.g. started.json).',
+                    'Load the standards that were previously saved to a file (e.g. frontiers.json).',
                 onClick: () => {
                     hiddenFileInputRef.current.click();
                 }
@@ -259,7 +259,7 @@ const AppPage = () => {
             )
         ];
 
-        saveAs(new Blob(blobData, { type: 'application/json' }), `started.json`);
+        saveAs(new Blob(blobData, { type: 'application/json' }), `frontiers.json`);
     };
 
     const handleClickSave = () => {
@@ -279,7 +279,7 @@ const AppPage = () => {
             )
         ];
 
-        saveAs(new Blob(blobData, { type: 'text/markdown' }), 'started.md');
+        saveAs(new Blob(blobData, { type: 'text/markdown' }), 'frontiers.md');
     };
 
     const handleClickExport = () => {

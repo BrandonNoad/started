@@ -20,7 +20,7 @@ import Footer from '../components/Footer';
 const commonPx = [3, 8, 12];
 
 const BlogLayout = ({ title, children }) => {
-    const [isAlertVisible, setIsAlertVisible] = useState(true);
+    const [isAlertVisible, setIsAlertVisible] = useState(false);
 
     return (
         <>
@@ -31,7 +31,7 @@ const BlogLayout = ({ title, children }) => {
                         <AlertIcon />
                         <AlertTitle mr={2}>We want your feedback!</AlertTitle>
                         <AlertDescription>
-                            To provide feedback on the STARTED Framework, please complete{' '}
+                            To provide feedback on the FRONTIERS Framework, please complete{' '}
                             <Link
                                 color="secondary.700"
                                 href="https://uwmadison.co1.qualtrics.com/jfe/form/SV_9SH5Q0b7ZpfTH6u"

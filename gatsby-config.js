@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: 'STARTED'
+        title: 'FRONTIERS'
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -15,8 +15,8 @@ module.exports = {
             // Generates favicon
             resolve: 'gatsby-plugin-manifest',
             options: {
-                name: 'Standards for Rigor and Transparency in Dysphagia Research',
-                short_name: 'STARTED',
+                name: 'Framework for Rigor and Transparency in Research on Swallowing',
+                short_name: 'FRONTIERS',
                 start_url: '/',
                 background_color: '#fff',
                 theme_color: '#3F9142',

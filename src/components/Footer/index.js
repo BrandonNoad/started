@@ -17,7 +17,7 @@ const Footer = ({ colors = defaultColors } = {}) => (
         color={colors.font}
     >
         <Box>
-            <Text>&copy; 2021 STARTED Collaborative</Text>
+            <Text>&copy; FRONTIERS 2023</Text>
         </Box>
         <Box>
             <a href="https://github.com/BrandonNoad/started">

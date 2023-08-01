@@ -185,10 +185,10 @@ export default [
                                                                         email us at{' '}
                                                                         <Link
                                                                             color="secondary.600"
-                                                                            href="mailto:startedcollaborative@gmail.com"
+                                                                            href="mailto:frontiersframework@gmail.com"
                                                                             isExternal={true}
                                                                         >
-                                                                            startedcollaborative@gmail.com
+                                                                            frontiersframework@gmail.com
                                                                         </Link>
                                                                         .
                                                                     </>

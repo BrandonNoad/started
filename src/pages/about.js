@@ -36,35 +36,54 @@ const contributors = [
 const AboutPage = () => (
     <BlogLayout title="About">
         <Heading as="h2" size="xl" color="gray.900" mb={5}>
-            The STARTED Framework
+            The FRONTIERS Framework
         </Heading>
         <Text mb={4}>
-            The newly developed STARTED (
+            The newly developed FRONTIERS (
             <Text as="span" fontWeight="semibold">
-                STA
+                F
             </Text>
-            ndards for{' '}
+            ramework for{' '}
             <Text as="span" fontWeight="semibold">
                 R
             </Text>
-            igor and{' '}
+            ig
+            <Text as="span" fontWeight="semibold">
+                O
+            </Text>
+            r a
+            <Text as="span" fontWeight="semibold">
+                N
+            </Text>
+            d{' '}
             <Text as="span" fontWeight="semibold">
                 T
             </Text>
-            ranspar
+            ransparency{' '}
+            <Text as="span" fontWeight="semibold">
+                I
+            </Text>
+            n R
             <Text as="span" fontWeight="semibold">
                 E
             </Text>
-            ncy in{' '}
+            sea
             <Text as="span" fontWeight="semibold">
-                D
+                R
             </Text>
-            ysphagia Research) Framework is an evidence-based, preferred set of recommendations for
-            reporting dysphagia research involving human subjects. This interactive, web-based
-            application has been designed to appraise the rigor and transparency of peer-reviewed
-            dysphagia articles. The application allows clinicians and researchers alike to easily
-            determine strengths and weaknesses in design and/or reporting of dysphagia research by
-            asking key questions to assess rigor and transparency across the following categories:
+            ch on{' '}
+            <Text as="span" fontWeight="semibold">
+                S
+            </Text>
+            wallowing) Framework is a tool for dysphagia researchers and research consumers to
+            promote rigor and transparency in study design and reporting, specific to dysphagia
+            research.
+        </Text>
+        <Text mb={4}>
+            This interactive, web-based application has been designed to enhance the accessibility
+            and usability of the FRONTIERS Framework. The application allows clinicians and
+            researchers alike to easily plan for and appraise rigor and transparency in study design
+            and reporting by asking key questions across the following categories:
         </Text>
         <UnorderedList mb={4}>
             <ListItem>Participants and baseline characteristics</ListItem>
@@ -86,14 +105,14 @@ const AboutPage = () => (
             further describe the framework and provide examples of its utilization.
         </Text>
         <Text mb={4}>
-            If you have questions, comments, or feedback about the STARTED Framework, please email
+            If you have questions, comments, or feedback about the FRONTIERS Framework, please email
             us at{' '}
             <Link
                 color="secondary.600"
-                href="mailto:startedcollaborative@gmail.com"
+                href="mailto:frontiersframework@gmail.com"
                 isExternal={true}
             >
-                startedcollaborative@gmail.com
+                frontiersframework@gmail.com
             </Link>
             .
         </Text>
