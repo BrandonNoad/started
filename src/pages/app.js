@@ -147,7 +147,7 @@ const AppPage = () => {
                 isRecommended: true,
                 icon: IoColorWandOutline,
                 title: 'Setup Assistant',
-                description: 'Answer a series of questions to determine the standards to include.',
+                description: 'Answer a series of questions to determine the sections to include.',
                 onClick: () => {
                     setIsConfigAssistantActive(true);
                 }
@@ -155,7 +155,7 @@ const AppPage = () => {
             {
                 icon: IoHandRightOutline,
                 title: 'Manual',
-                description: 'Manually select the standards to include.',
+                description: 'Manually select the sections to include.',
                 onClick: () => {
                     setVisibleQuestionnaireSections(allQuestionnaireSections);
                     setStudyConfigurationBlobData([
@@ -171,7 +171,7 @@ const AppPage = () => {
                 icon: IoCloudUploadOutline,
                 title: 'Load File',
                 description:
-                    'Load the standards that were previously saved to a file (e.g. frontiers.json).',
+                    'Load the sections that were previously saved to a file (e.g. frontiers.json).',
                 onClick: () => {
                     hiddenFileInputRef.current.click();
                 }
@@ -272,7 +272,7 @@ const AppPage = () => {
 
     const exportData = () => {
         const blobData = [
-            '# Standards for Rigor and Transparency in Dysphagia Research\n\n',
+            '# Framework for Rigor and Transparency in Research on Swallowing\n\n',
             ...studyConfigurationBlobData,
             ...visibleQuestionnaireSections.flatMap((questionnaireSection) =>
                 questionnaireSectionToBlobData({ questionnaireSection, responses })

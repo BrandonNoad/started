@@ -247,7 +247,7 @@ const QuestionnaireBuilder = ({ setAnswersToConfigQuestions }) => {
                             <Text as="span" fontWeight="semibold">
                                 Continue
                             </Text>{' '}
-                            to view the Standards for Rigor and Transparency or{' '}
+                            to view the questionnaire or{' '}
                             <Text as="span" fontWeight="semibold">
                                 Cancel
                             </Text>{' '}
