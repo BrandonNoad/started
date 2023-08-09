@@ -12,6 +12,12 @@ export default {
             questions: [
                 {
                     question:
+                        'Were the environmental conditions reported (e.g., study location, setting)?',
+                    labels: [LABEL_ID_TRANSPARENCY],
+                    responseOptions: ['Yes', 'No']
+                },
+                {
+                    question:
                         'Was the swallowing stimuli (e.g., bolus types) administration protocol detailed?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No', 'N/A'],
@@ -62,6 +68,16 @@ export default {
                     ]
                 },
                 {
+                    question: 'Was the positioning of the participant described?',
+                    labels: [LABEL_ID_TRANSPARENCY],
+                    responseOptions: ['Yes', 'No']
+                },
+                {
+                    question: 'Were the participants blinded to their condition?',
+                    labels: [LABEL_ID_RIGOR],
+                    responseOptions: ['Yes', 'No', 'Not reported']
+                },
+                {
                     question: 'Was more than one rater included?',
                     labels: [LABEL_ID_RIGOR],
                     responseOptions: ['Yes', 'No'],
@@ -100,16 +116,6 @@ export default {
                     ]
                 },
                 {
-                    question: 'Were the participants blinded to their condition?',
-                    labels: [LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No', 'Not reported']
-                },
-                {
-                    question: 'Was drop-out (attrition) rate reported?',
-                    labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
-                },
-                {
                     question:
                         'Were the training and/or credentials of all individuals involved in data collection and/or analysis reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
@@ -122,13 +128,7 @@ export default {
                     responseOptions: ['Yes', 'No']
                 },
                 {
-                    question: 'Was the positioning of the participant described?',
-                    labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
-                },
-                {
-                    question:
-                        'Were the environmental conditions reported (e.g., study location, setting)?',
+                    question: 'Was drop-out (attrition) rate reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 }

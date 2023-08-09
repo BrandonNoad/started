@@ -35,7 +35,7 @@ const allQuestionnaireSectionsWithQuestionIdsSorted = allQuestionnaireSections
     .map(addIdsToQuestionsInQuestionnaireSection)
     .sort((a, b) => a.order - b.order);
 
-const FILE_VERSION = '0.1.0';
+const FILE_VERSION = '0.2.0';
 
 let isFileSaverSupported;
 try {
