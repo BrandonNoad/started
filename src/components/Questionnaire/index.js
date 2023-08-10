@@ -6,12 +6,14 @@ import QuestionnaireSectionCard from '../QuestionnaireSectionCard';
 import QuestionGroup from '../QuestionGroup';
 import { generateProgressDataForQuestionGroups } from '../../util';
 
-const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
+const Questionnaire = ({ questionnaireSections, responses, setResponses, allQuestions }) => {
     const [activeQuestionnaireSectionIndex, setActiveQuestionnaireSectionIndex] = useState(null);
 
     const [progressData, setProgressData] = useState({});
 
-    useEffect(() => {
+    // Since we've added "shared" questions, we need to update the progress data for all sections
+    // instead of just the active section.
+    const updateProgress = () => {
         setProgressData(
             questionnaireSections.reduce((progressDataAcc, { id, questionGroups }) => {
                 return {
@@ -20,6 +22,10 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
                 };
             }, {})
         );
+    };
+
+    useEffect(() => {
+        updateProgress();
 
         setActiveQuestionnaireSectionIndex(null);
     }, [questionnaireSections]);
@@ -75,15 +81,17 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
 
     // -- Questionnaire Section View
 
-    const updateProgress = () => {
-        setProgressData({
-            ...progressData,
-            [activeQuestionnaireSection.id]: generateProgressDataForQuestionGroups({
-                questionGroups: activeQuestionnaireSection.questionGroups,
-                responses
-            })
-        });
-    };
+    // TODO: I am keeping this commented out code temporarily in case we want to revert the changes
+    // to the progress calculations.
+    // const updateProgress = () => {
+    //     setProgressData({
+    //         ...progressData,
+    //         [activeQuestionnaireSection.id]: generateProgressDataForQuestionGroups({
+    //             questionGroups: activeQuestionnaireSection.questionGroups,
+    //             responses
+    //         })
+    //     });
+    // };
 
     const handleClickNextSection = () => {
         updateProgress();
@@ -102,11 +110,23 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses }) => {
         setActiveQuestionnaireSectionIndex(null);
     };
 
-    const respondToQuestion = (questionId, responsesForQuestion) =>
+    const respondToQuestion = (question, responsesForQuestion) => {
+        const newResponses = question.sharedId
+            ? allQuestions
+                  .filter(({ sharedId }) => sharedId === question.sharedId)
+                  .reduce((acc, { id }) => {
+                      return {
+                          ...acc,
+                          [id]: responsesForQuestion
+                      };
+                  }, {})
+            : { [question.id]: responsesForQuestion };
+
         setResponses({
             ...responses,
-            [questionId]: responsesForQuestion
+            ...newResponses
         });
+    };
 
     return (
         <Box bg="white" borderRadius="md" boxShadow="md">

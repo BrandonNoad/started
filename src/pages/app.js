@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { saveAs } from 'file-saver';
 import _keyBy from 'lodash/keyBy';
 import {
@@ -27,6 +27,7 @@ import Questionnaire from '../components/Questionnaire';
 import {
     filterCollection,
     addIdsToQuestionsInQuestionnaireSection,
+    flattenQuestionsInQuestionGroups,
     questionnaireSectionToBlobData
 } from '../util';
 import allQuestionnaireSections from '../data/questionnaire-sections';
@@ -50,6 +51,14 @@ const AppPage = () => {
 
     const [allQuestionnaireSections, setAllQuestionnaireSections] = useState(
         allQuestionnaireSectionsWithQuestionIdsSorted
+    );
+
+    const allQuestions = useMemo(
+        () =>
+            allQuestionnaireSections.flatMap(({ questionGroups }) =>
+                flattenQuestionsInQuestionGroups(questionGroups)
+            ),
+        [allQuestionnaireSections]
     );
 
     const [isConfigAssistantActive, setIsConfigAssistantActive] = useState(false);
@@ -532,6 +541,7 @@ const AppPage = () => {
                 questionnaireSections={visibleQuestionnaireSections}
                 responses={responses}
                 setResponses={setResponses}
+                allQuestions={allQuestions}
             />
         </AppLayout>
     );

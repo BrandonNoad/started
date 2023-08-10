@@ -90,107 +90,105 @@ const QuestionGroup = ({
                     {questionGroup.heading}
                 </Heading>
             ) : null}
-            {questionGroup.questions.map(
-                ({
+            {questionGroup.questions.map((questionObj) => {
+                const {
                     id,
                     question,
                     labels,
                     isMultipleResponsesAllowed = false,
                     responseOptions,
                     questionGroups
-                }) => {
-                    const InputComponent = isMultipleResponsesAllowed ? Checkbox : Radio;
+                } = questionObj;
 
-                    const handleChange = (e) => {
-                        const toggledResponse = parseInt(e.target.value, 10);
+                const InputComponent = isMultipleResponsesAllowed ? Checkbox : Radio;
 
-                        // Radios
-                        // The onChange event does not fire when a radio that is already selected is
-                        // selected again. See https://github.com/facebook/react/issues/1471
-                        if (!isMultipleResponsesAllowed) {
-                            respondToQuestion(id, [toggledResponse]);
-                            return;
-                        }
+                const handleChange = (e) => {
+                    const toggledResponse = parseInt(e.target.value, 10);
 
-                        // Checkboxes
+                    // Radios
+                    // The onChange event does not fire when a radio that is already selected is
+                    // selected again. See https://github.com/facebook/react/issues/1471
+                    if (!isMultipleResponsesAllowed) {
+                        respondToQuestion(questionObj, [toggledResponse]);
+                        return;
+                    }
 
-                        const isChecked = e.target.checked;
+                    // Checkboxes
 
-                        const responsesForQuestion = responses[id] ?? [];
+                    const isChecked = e.target.checked;
 
-                        const nextResponses = isChecked
-                            ? [...responsesForQuestion, toggledResponse]
-                            : responsesForQuestion.filter(
-                                  (response) => response !== toggledResponse
-                              );
+                    const responsesForQuestion = responses[id] ?? [];
 
-                        respondToQuestion(id, nextResponses);
-                    };
+                    const nextResponses = isChecked
+                        ? [...responsesForQuestion, toggledResponse]
+                        : responsesForQuestion.filter((response) => response !== toggledResponse);
 
-                    return (
-                        <Box key={id} mb={3}>
-                            <FormControl as="fieldset">
-                                <FormLabel as="legend" fontWeight="bold" mb={1}>
-                                    <Box>
-                                        <Text as="span" fontSize="md" mr={2}>
-                                            {question}
-                                        </Text>
-                                        {labels.map((labelId) => (
-                                            <Tag
-                                                key={labelId.toString()}
-                                                colorScheme="primary"
-                                                variant="outline"
-                                                size="sm"
-                                                mr={2}
-                                                verticalAlign="text-bottom"
+                    respondToQuestion(questionObj, nextResponses);
+                };
+
+                return (
+                    <Box key={id} mb={3}>
+                        <FormControl as="fieldset">
+                            <FormLabel as="legend" fontWeight="bold" mb={1}>
+                                <Box>
+                                    <Text as="span" fontSize="md" mr={2}>
+                                        {question}
+                                    </Text>
+                                    {labels.map((labelId) => (
+                                        <Tag
+                                            key={labelId.toString()}
+                                            colorScheme="primary"
+                                            variant="outline"
+                                            size="sm"
+                                            mr={2}
+                                            verticalAlign="text-bottom"
+                                        >
+                                            {labelsIndexed[labelId].label}
+                                        </Tag>
+                                    ))}
+                                </Box>
+                            </FormLabel>
+                            <VStack align="flex-start" spacing={1}>
+                                {responseOptions.map((responseOption, responseOptionIndex) => {
+                                    const isChecked =
+                                        responses[id] !== undefined &&
+                                        responses[id].includes(responseOptionIndex);
+
+                                    return (
+                                        <InputComponent
+                                            key={responseOptionIndex.toString()}
+                                            colorScheme="accent.1"
+                                            value={responseOptionIndex}
+                                            isChecked={isChecked}
+                                            onChange={handleChange}
+                                        >
+                                            <Text
+                                                as="span"
+                                                fontWeight={isChecked ? 'semibold' : 'normal'}
                                             >
-                                                {labelsIndexed[labelId].label}
-                                            </Tag>
-                                        ))}
-                                    </Box>
-                                </FormLabel>
-                                <VStack align="flex-start" spacing={1}>
-                                    {responseOptions.map((responseOption, responseOptionIndex) => {
-                                        const isChecked =
-                                            responses[id] !== undefined &&
-                                            responses[id].includes(responseOptionIndex);
-
-                                        return (
-                                            <InputComponent
-                                                key={responseOptionIndex.toString()}
-                                                colorScheme="accent.1"
-                                                value={responseOptionIndex}
-                                                isChecked={isChecked}
-                                                onChange={handleChange}
-                                            >
-                                                <Text
-                                                    as="span"
-                                                    fontWeight={isChecked ? 'semibold' : 'normal'}
-                                                >
-                                                    {responseOption}
-                                                </Text>
-                                            </InputComponent>
-                                        );
-                                    })}
-                                </VStack>
-                            </FormControl>
-                            {questionGroups
-                                ? questionGroups.map((questionGroup, questionGroupIndex) => (
-                                      <QuestionGroup
-                                          key={questionGroupIndex.toString()}
-                                          questionGroup={questionGroup}
-                                          responses={responses}
-                                          respondToQuestion={respondToQuestion}
-                                          parentQuestionResponseOptions={responseOptions}
-                                          parentQuestionResponses={responses[id] ?? []}
-                                          depth={depth + 1}
-                                      />
-                                  ))
-                                : null}
-                        </Box>
-                    );
-                }
-            )}
+                                                {responseOption}
+                                            </Text>
+                                        </InputComponent>
+                                    );
+                                })}
+                            </VStack>
+                        </FormControl>
+                        {questionGroups
+                            ? questionGroups.map((questionGroup, questionGroupIndex) => (
+                                  <QuestionGroup
+                                      key={questionGroupIndex.toString()}
+                                      questionGroup={questionGroup}
+                                      responses={responses}
+                                      respondToQuestion={respondToQuestion}
+                                      parentQuestionResponseOptions={responseOptions}
+                                      parentQuestionResponses={responses[id] ?? []}
+                                      depth={depth + 1}
+                                  />
+                              ))
+                            : null}
+                    </Box>
+                );
+            })}
         </ContainerComponent>
     );
 };

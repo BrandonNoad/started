@@ -64,6 +64,16 @@ export const addIdsToQuestionsInQuestionnaireSection = (questionnaireSection) =>
     })
 });
 
+export const flattenQuestionsInQuestionGroups = (questionGroups) =>
+    questionGroups.flatMap(({ questions }) =>
+        questions.flatMap(({ questionGroups: questionGroupsForQuestion, ...question }) => [
+            question,
+            ...(questionGroupsForQuestion
+                ? flattenQuestionsInQuestionGroups(questionGroupsForQuestion)
+                : [])
+        ])
+    );
+
 // { numQuestions, numResponses }
 export const generateProgressDataForQuestionGroups = ({
     questionGroups,
