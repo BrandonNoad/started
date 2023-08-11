@@ -11,14 +11,12 @@ export default {
         {
             questions: [
                 {
-                    question:
-                        'Were the environmental conditions reported (e.g., study location, setting)?',
+                    question: 'Were the study location(s) and environmental settings described?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 },
                 {
-                    question:
-                        'Was the swallowing stimuli (e.g., bolus types) administration protocol detailed?',
+                    question: 'Was the data collection protocol(s) described in detail?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
@@ -27,34 +25,18 @@ export default {
                             questions: [
                                 {
                                     question:
-                                        'Was there a description of bolus consistencies (i.e., rheology, IDDSI level, other validated measure)?',
+                                        'Were the bolus consistencies described (i.e., rheology, IDDSI level, other validated measure)?',
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
                                 },
                                 {
-                                    question: 'Was there a description of bolus volume?',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
-                                },
-                                {
-                                    question:
-                                        'Was there a description of number of trials per consistency & volume?',
+                                    question: 'Were bolus volumes described?',
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
                                 },
                                 {
                                     question:
-                                        'Was there a description of method of administration (i.e. cup sip, spoon-delivered, straw, tube-placed, self- vs clinician administered)?',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
-                                },
-                                {
-                                    question: 'Was there a description of cueing and instruction?',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
-                                },
-                                {
-                                    question: 'Was the manufacturer of the stimuli described?',
+                                        'Were the number of trials per consistency and volume described?',
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
                                 },
@@ -62,58 +44,49 @@ export default {
                                     question: 'Was the order of bolus administration described?',
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    question: 'Was the positioning of the participant described?',
-                    labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
-                },
-                {
-                    question: 'Were the participants blinded to their condition?',
-                    labels: [LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No', 'Not reported']
-                },
-                {
-                    question: 'Was more than one rater included?',
-                    labels: [LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No'],
-                    questionGroups: [
-                        {
-                            filter: 0,
-                            questions: [
-                                {
-                                    question: 'Was inter-rater reliability reported?',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
                                 },
                                 {
-                                    question: 'Was intra-rater reliability reported?',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
-                                },
-                                {
-                                    question: 'Were discrepancy processes addressed?',
+                                    question:
+                                        'Were stimulus brand and manufacturer details reported?',
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
                                 },
                                 {
                                     question:
-                                        'Were raters blinded to participant ID/group assignment?',
-                                    labels: [LABEL_ID_RIGOR],
+                                        'Were methods of bolus administration described (e.g., cup sip, spoon-delivered, straw, tube-placed, self- vs clinician administered)?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
                                 },
                                 {
-                                    question: 'Were raters blinded to timepoint/condition?',
-                                    labels: [LABEL_ID_RIGOR],
+                                    question:
+                                        'Were participant instructions described (e.g., cueing)?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
+                                    responseOptions: ['Yes', 'No']
+                                },
+                                {
+                                    question: 'Was the positioning of the participant described?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
                                 }
                             ]
                         }
                     ]
+                },
+                {
+                    question:
+                        'Was blinding of participants to task or treatment condition described?',
+                    labels: [LABEL_ID_RIGOR],
+                    responseOptions: ['Yes', 'No', 'Not reported']
+                },
+                {
+                    question: 'Were raters blinded to participant ID/group assignment?',
+                    labels: [LABEL_ID_RIGOR],
+                    responseOptions: ['Yes', 'No']
+                },
+                {
+                    question: 'Were raters blinded to timepoint/condition?',
+                    labels: [LABEL_ID_RIGOR],
+                    responseOptions: ['Yes', 'No']
                 },
                 {
                     question:
@@ -123,12 +96,12 @@ export default {
                 },
                 {
                     question:
-                        'Were the statistical tests/methods used appropriately for the type of data collected (e.g. categorical, ordinal, continuous)?',
+                        'Were the statistical tests/methods used appropriate for the type of data collected (e.g. categorical, ordinal, continuous)?',
                     labels: [LABEL_ID_RIGOR],
                     responseOptions: ['Yes', 'No']
                 },
                 {
-                    question: 'Was drop-out (attrition) rate reported?',
+                    question: 'Was data completeness and the handling of missing data described?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 }

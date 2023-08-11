@@ -6,7 +6,6 @@ export default {
     title: 'Tongue Pressure Tools',
     questionGroups: [
         {
-            // TODO: add N/A to 'g'
             questions: ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
                 (key) => commonInstrumentationQuestions[key]
             )

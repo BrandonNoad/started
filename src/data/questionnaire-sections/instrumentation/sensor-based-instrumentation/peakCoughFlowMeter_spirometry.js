@@ -6,7 +6,6 @@ export default {
     title: 'Peak Cough Flow Meter / Spirometry',
     questionGroups: [
         {
-            // TODO: add N/A to 'h'
             questions: ['b', 'c', 'd', 'e', 'f'].map((key) => commonInstrumentationQuestions[key])
         },
         {

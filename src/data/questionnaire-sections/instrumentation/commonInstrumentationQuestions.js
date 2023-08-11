@@ -6,20 +6,20 @@ export default {
     a: {
         sharedId: 'a',
         question:
-            'Were the following aspects of instrumentation-related positioning reported on (select all that apply)?',
+            'Were the following aspects of instrumentation-related positioning reported (select all that apply)?',
         labels: [LABEL_ID_TRANSPARENCY],
         isMultipleResponsesAllowed: true,
         responseOptions: [
             'Structures of interest (e.g., lips, tongue, larynx, cervical esophagus, etc.)',
             'Angles/Views (e.g., lateral, sagittal, etc.)',
             'Method/accessories to optimize positioning (e.g., wedge, pillow, etc.) or measures (e.g., nose plugs)',
-            'None of the above options were reported on'
+            'None of the above options were reported'
         ]
     },
     b: {
         sharedId: 'b',
         question:
-            'If the participant was able to visualize their physiology during utilization of instrumentation, was this reported on?',
+            'If the participant was able to visualize their physiology during utilization of instrumentation, was this reported?',
         labels: [LABEL_ID_TRANSPARENCY],
         responseOptions: ['Yes', 'No', 'N/A']
     },
@@ -50,12 +50,6 @@ export default {
     },
     g: {
         sharedId: 'g',
-        question: 'Was number of raters reported?',
-        labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
-    },
-    h: {
-        sharedId: 'h',
         question: 'Was more than one rater included?',
         labels: [LABEL_ID_RIGOR],
         responseOptions: ['Yes', 'No'],
@@ -64,7 +58,7 @@ export default {
                 filter: 0,
                 questions: [
                     {
-                        sharedId: 'h-0-0',
+                        sharedId: 'g-0-0',
                         question: 'Was inter-rater reliability reported?',
                         labels: [LABEL_ID_TRANSPARENCY],
                         responseOptions: ['Yes', 'No'],
@@ -73,29 +67,9 @@ export default {
                                 filter: 0,
                                 questions: [
                                     {
-                                        sharedId: 'h-0-0-0-0',
+                                        sharedId: 'g-0-0-0-0',
                                         question:
                                             'Was the method for determining inter-rater reliability reported?',
-                                        labels: [LABEL_ID_TRANSPARENCY],
-                                        responseOptions: ['Yes', 'No']
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        sharedId: 'h-0-1',
-                        question: 'Was intra-rater reliability reported?',
-                        labels: [LABEL_ID_TRANSPARENCY],
-                        responseOptions: ['Yes', 'No'],
-                        questionGroups: [
-                            {
-                                filter: 0,
-                                questions: [
-                                    {
-                                        sharedId: 'h-0-1-0-0',
-                                        question:
-                                            'Was the method for determining intra-rater reliability reported?',
                                         labels: [LABEL_ID_TRANSPARENCY],
                                         responseOptions: ['Yes', 'No']
                                     }
@@ -107,11 +81,31 @@ export default {
             }
         ]
     },
+    h: {
+        sharedId: 'h',
+        question: 'Was intra-rater reliability reported?',
+        labels: [LABEL_ID_TRANSPARENCY],
+        responseOptions: ['Yes', 'No', 'N/A'],
+        questionGroups: [
+            {
+                filter: 0,
+                questions: [
+                    {
+                        sharedId: 'h-0-0',
+                        question:
+                            'Was the method for determining intra-rater reliability reported?',
+                        labels: [LABEL_ID_TRANSPARENCY],
+                        responseOptions: ['Yes', 'No']
+                    }
+                ]
+            }
+        ]
+    },
     i: {
         sharedId: 'i',
-        question: 'Was rater training reported?',
+        question: 'Were discrepancy resolution processes described?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     j: {
         sharedId: 'j',
@@ -169,7 +163,7 @@ export default {
     l: {
         sharedId: 'l',
         question:
-            'Was the timing of ratings reported on (e.g., at the time of evaluation versus after the evaluation)?',
+            'Was the timing of ratings reported (e.g., at the time of evaluation versus after the evaluation)?',
         labels: [LABEL_ID_TRANSPARENCY],
         responseOptions: ['Yes', 'No'],
         questionGroups: [

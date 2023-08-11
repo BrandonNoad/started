@@ -111,20 +111,25 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses, allQues
     };
 
     const respondToQuestion = (question, responsesForQuestion) => {
-        const newResponses = question.sharedId
+        const newSharedResponses = question.sharedId
             ? allQuestions
-                  .filter(({ sharedId }) => sharedId === question.sharedId)
+                  .filter(
+                      ({ id, sharedId }) => id !== question.id && sharedId === question.sharedId
+                  )
                   .reduce((acc, { id }) => {
                       return {
                           ...acc,
                           [id]: responsesForQuestion
                       };
                   }, {})
-            : { [question.id]: responsesForQuestion };
+            : {};
 
+        // Spread `newSharedResponses` before the existing `responses` since we do not want to
+        // overwrite any existing responses for shared questions.
         setResponses({
+            ...newSharedResponses,
             ...responses,
-            ...newResponses
+            [question.id]: responsesForQuestion
         });
     };
 

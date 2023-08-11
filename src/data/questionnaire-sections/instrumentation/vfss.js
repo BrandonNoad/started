@@ -6,20 +6,17 @@ export default {
     title: 'Videofluoroscopic Swallow Study (VFSS)',
     questionGroups: [
         {
-            questions: ['a', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
-        },
-        {
             questions: [
-                commonInstrumentationQuestions.k,
+                ...['a', 'c', 'd'].map((key) => commonInstrumentationQuestions[key]),
                 {
                     question:
                         'Were details regarding recording settings reported (specifically signal acquisition rate/frame rate)?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 },
-                commonInstrumentationQuestions.m
+                ...['e', 'f', 'g', 'h', 'i', 'j', 'k', 'm'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                )
             ]
         },
         {
