@@ -6,7 +6,7 @@ import {
 
 export default {
     id: QUESTIONNAIRE_SECTION_ID_PARTICIPANTS,
-    title: 'Participants',
+    title: 'Participant Characteristics',
     questionGroups: [
         {
             questions: [

@@ -3,12 +3,10 @@ import commonInstrumentationQuestions from '../commonInstrumentationQuestions';
 
 export default {
     id: QUESTIONNAIRE_SECTION_ID_TONGUE_PRESSURE_TOOLS,
-    title: 'Tongue Pressure Tools',
+    title: 'Tongue Pressure',
     questionGroups: [
         {
-            questions: ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
+            questions: ['b', 'c', 'd', 'e', 'f'].map((key) => commonInstrumentationQuestions[key])
         },
         {
             questions: ['r', 's', 't', 'u', 'v', 'w'].map(

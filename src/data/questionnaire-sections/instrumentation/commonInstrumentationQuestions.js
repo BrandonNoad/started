@@ -183,8 +183,7 @@ export default {
     },
     m: {
         sharedId: 'm',
-        question:
-            'Were the tool(s)/method/standard protocol used reported (i.e. MBSImP, ASPEKT, DIGEST)?',
+        question: 'Were standard rating methods used and identified (e.g. MBSImP, DIGEST, ASPEKT)?',
         labels: [LABEL_ID_TRANSPARENCY],
         responseOptions: ['Yes', 'No']
     },
@@ -235,7 +234,7 @@ export default {
     r: {
         sharedId: 'r',
         question:
-            'Was the placement and orientation of the device, sensor(s), and/or catheter described?',
+            'Were the placement and orientation of the device, sensor(s), and/or catheter described?',
         labels: [LABEL_ID_TRANSPARENCY],
         responseOptions: ['Yes', 'No']
     },

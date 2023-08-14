@@ -2,7 +2,7 @@ import { QUESTIONNAIRE_SECTION_ID_PROM, LABEL_ID_TRANSPARENCY, LABEL_ID_RIGOR } 
 
 export default {
     id: QUESTIONNAIRE_SECTION_ID_PROM,
-    title: 'Patient Reported Outcome Measures (PROM)',
+    title: 'Patient or Care-Provider Reported Outcome Measures (PROMs)',
     questionGroups: [
         {
             questions: [

@@ -33,23 +33,13 @@ export default [
         isMultipleResponsesAllowed: false,
         responseOptions: ['Yes', 'No'],
         questionnaireSections: [
-            { filter: 0, id: QUESTIONNAIRE_SECTION_ID_PARTICIPANTS },
-            { filter: 0, id: QUESTIONNAIRE_SECTION_ID_UNIVERSALLY_APPLICABLE_QUESTIONS }
+            { filter: 0, id: QUESTIONNAIRE_SECTION_ID_UNIVERSALLY_APPLICABLE_QUESTIONS },
+            { filter: 0, id: QUESTIONNAIRE_SECTION_ID_PARTICIPANTS }
         ],
         questionGroups: [
             {
                 filter: 0,
                 questions: [
-                    {
-                        question: 'Did the study investigate a type of swallowing treatment?​​',
-                        isResponseRequired: true,
-                        isMultipleResponsesAllowed: false,
-                        responseOptions: ['Yes', 'No'],
-                        questionnaireSections: [
-                            { filter: 0, id: QUESTIONNAIRE_SECTION_ID_TREATMENT }
-                        ],
-                        questionGroups: []
-                    },
                     {
                         question:
                             'Did the study utilize a non-instrumental swallowing assessment or screening tool?​​',
@@ -205,8 +195,18 @@ export default [
                         ]
                     },
                     {
+                        question: 'Did the study investigate a type of swallowing treatment?​​',
+                        isResponseRequired: true,
+                        isMultipleResponsesAllowed: false,
+                        responseOptions: ['Yes', 'No'],
+                        questionnaireSections: [
+                            { filter: 0, id: QUESTIONNAIRE_SECTION_ID_TREATMENT }
+                        ],
+                        questionGroups: []
+                    },
+                    {
                         question:
-                            'Was a patient-reported outcome measure utilized as part of the study?​',
+                            'Was a patient or care-provider reported outcome measure utilized as part of the study?​',
                         isResponseRequired: true,
                         isMultipleResponsesAllowed: false,
                         responseOptions: ['Yes', 'No'],

@@ -6,7 +6,7 @@ import {
 
 export default {
     id: QUESTIONNAIRE_SECTION_ID_TREATMENT,
-    title: 'Treatment',
+    title: 'Treatment of Dysphagia',
     questionGroups: [
         {
             questions: [

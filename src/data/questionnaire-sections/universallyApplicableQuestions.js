@@ -73,9 +73,8 @@ export default {
                     ]
                 },
                 {
-                    question:
-                        'Was blinding of participants to task or treatment condition described?',
-                    labels: [LABEL_ID_RIGOR],
+                    question: 'Were participants blinded to task or treatment condition?',
+                    labels: [LABEL_ID_RIGOR, LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No', 'Not reported']
                 },
                 {

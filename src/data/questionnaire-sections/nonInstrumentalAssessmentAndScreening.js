@@ -6,7 +6,7 @@ import {
 
 export default {
     id: QUESTIONNAIRE_SECTION_ID_NON_INSTRUMENTAL_ASSESSMENT_AND_SCREENING,
-    title: 'Non-Instrumental Assessment and Screening',
+    title: 'Screening and Clinical / Non-Instrumental Assessments of Swallowing',
     questionGroups: [
         {
             questions: [

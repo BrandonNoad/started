@@ -3,10 +3,9 @@ import commonInstrumentationQuestions from './commonInstrumentationQuestions';
 
 export default {
     id: QUESTIONNAIRE_SECTION_ID_OTHER_INSTRUMENTATION,
-    title: 'Other Instrumentation',
+    title: 'Other Instrumental Assessments of Swallowing',
     questionGroups: [
         {
-            // TODO: Add N/As
             questions: ['b', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
                 (key) => commonInstrumentationQuestions[key]
             )

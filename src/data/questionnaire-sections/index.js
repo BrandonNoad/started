@@ -31,12 +31,13 @@ export const labels = [
     }
 ];
 
+// Note - there is no value with order === 3.
 export default [
     { ...nonInstrumentalAssessmentAndScreening, order: 4 },
-    { ...participants, order: 1 },
-    { ...prom, order: 20 },
-    { ...treatment, order: 3 },
-    { ...universallyApplicableQuestions, order: 2 },
+    { ...participants, order: 2 },
+    { ...prom, order: 21 },
+    { ...treatment, order: 20 },
+    { ...universallyApplicableQuestions, order: 1 },
     { ...fees, order: 6 },
     { ...otherImagingBasedInstrumentation, order: 18 },
     { ...otherInstrumentation, order: 19 },
