@@ -6,9 +6,11 @@ export default {
     title: 'Other Instrumental Assessments of Swallowing',
     questionGroups: [
         {
-            questions: ['b', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
+            questions: [
+                ...['d', 'e', 'f', 'g', 'h', 'i', 'j'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                )
+            ]
         }
     ]
 };

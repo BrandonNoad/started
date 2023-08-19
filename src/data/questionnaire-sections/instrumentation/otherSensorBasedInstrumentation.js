@@ -6,16 +6,11 @@ export default {
     title: 'Other Sensor-Based Instrumentation',
     questionGroups: [
         {
-            questions: ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
-        },
-        {
-            heading: 'Topical Applications',
-            questions: ['p', 'q'].map((key) => commonInstrumentationQuestions[key])
-        },
-        {
-            questions: ['r', 't', 'u', 'v', 'w'].map((key) => commonInstrumentationQuestions[key])
+            questions: [
+                ...['u', 'd', 'e', 'f', 'p', 'q', 'r', 'g', 'h', 'i', 'j', 'c', 't', 'v', 'w'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                )
+            ]
         }
     ]
 };

@@ -6,17 +6,40 @@ export default {
     title: 'Fiberoptic Endoscopic Evaluation of Swallowing (FEES)',
     questionGroups: [
         {
-            questions: ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
-        },
-        {
-            heading: 'Assessment of Secretions',
+            // TODO: move question c down
             questions: [
+                {
+                    question:
+                        'Were the details of the equipment reported including scope model and recording system?',
+                    labels: [LABEL_ID_TRANSPARENCY],
+                    responseOptions: ['Yes', 'No']
+                },
+                ...['e', 'f'].map((key) => commonInstrumentationQuestions[key]),
+                {
+                    question: 'Was dye used in the study?',
+                    labels: [],
+                    responseOptions: ['Yes', 'No'],
+                    questionGroups: [
+                        {
+                            filter: 0,
+                            questions: [
+                                {
+                                    question:
+                                        'Was coloring method for bolus trials described for reproducible preparation (i.e., color type, brand, mixture method, amount, etc.)?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
+                                    responseOptions: ['Yes', 'No']
+                                }
+                            ]
+                        }
+                    ]
+                },
+                ...['p', 'q', 'c', 'g', 'h', 'i', 'j'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                ),
                 {
                     question: 'Were secretions scored in the study?',
                     labels: [],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,
@@ -42,46 +65,18 @@ export default {
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            heading: 'Dye',
-            questions: [
-                {
-                    question: 'Was dye used in the study?',
-                    labels: [],
-                    responseOptions: ['Yes', 'No'],
-                    questionGroups: [
-                        {
-                            filter: 0,
-                            questions: [
-                                {
-                                    question:
-                                        'Was coloring method for bolus trials described for reproducible preparation (i.e., color type, brand, mixture method, amount, etc.)?',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
-                                }
-                            ]
-                        }
-                    ]
                 },
-                ...['p', 'q'].map((key) => commonInstrumentationQuestions[key]),
+
                 {
                     question: 'Was the protocol for describing anatomical abnormalities reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
-                }
-            ]
-        },
-        {
-            heading: 'Assessment of Safety',
-            questions: [
+                    responseOptions: ['Yes', 'No', 'N/A']
+                },
                 {
                     question:
-                        'Was safety of swallowing (i.e. penetration-aspiration) was evaluated in the study?',
+                        'Was safety of swallowing (i.e. penetration-aspiration) evaluated in the study?',
                     labels: [],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,
@@ -106,23 +101,18 @@ export default {
                                 },
                                 {
                                     question:
-                                        'Was timing of safety impairment (I.e., before, during or after the swallow) acknowledged?',
+                                        'Was timing of safety impairment (i.e., before, during or after the swallow) acknowledged?',
                                     labels: [LABEL_ID_RIGOR],
                                     responseOptions: ['Yes', 'No']
                                 }
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            heading: 'Assessment of Efficiency',
-            questions: [
+                },
                 {
                     question: 'Was efficiency (i.e. residue) evaluated in the study?',
                     labels: [],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,

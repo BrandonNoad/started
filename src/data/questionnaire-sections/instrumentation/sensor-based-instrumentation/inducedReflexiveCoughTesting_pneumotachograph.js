@@ -9,13 +9,8 @@ export default {
     title: 'Induced Reflexive Cough Testing / Pneumotachograph',
     questionGroups: [
         {
-            questions: ['b', 'c', 'd', 'e', 'f'].map((key) => commonInstrumentationQuestions[key])
-        },
-        {
             questions: [
-                ...['r', 's', 't', 'u', 'v', 'w', 'x'].map(
-                    (key) => commonInstrumentationQuestions[key]
-                ),
+                commonInstrumentationQuestions.u,
                 {
                     question:
                         'Were the following aspects of cough stimuli described (select all that apply)?',
@@ -34,7 +29,10 @@ export default {
                     question: 'Was a procedure for determining reflexive cough threshold utilized?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
-                }
+                },
+                ...['d', 'e', 'f', 'r', 's', 't', 'v', 'w', 'x'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                )
             ]
         }
     ]

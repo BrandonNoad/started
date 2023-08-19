@@ -9,11 +9,6 @@ export default {
     title: 'Computed Tomography / 320-Row Area Detector Scan',
     questionGroups: [
         {
-            questions: ['c', 'd', 'e', 'g', 'h', 'i'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
-        },
-        {
             questions: [
                 {
                     question:
@@ -31,7 +26,8 @@ export default {
                         'Moment when the scan started',
                         'Duration of the scanning'
                     ]
-                }
+                },
+                ...['d', 'e', 'c', 'g', 'h', 'i'].map((key) => commonInstrumentationQuestions[key])
             ]
         }
     ]

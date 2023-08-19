@@ -6,17 +6,8 @@ export default {
     title: 'High Resolution Pharyngeal Manometry (HRPM)',
     questionGroups: [
         {
-            questions: ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
-        },
-        {
-            heading: 'Topical Applications',
-            questions: ['p', 'q'].map((key) => commonInstrumentationQuestions[key])
-        },
-        {
             questions: [
-                ...['r', 's', 't', 'u', 'v', 'w'].map((key) => commonInstrumentationQuestions[key]),
+                ...['d', 'e', 'f', 'p', 'q', 'r'].map((key) => commonInstrumentationQuestions[key]),
                 {
                     question:
                         'Was a method for confirming and fixing catheter positioning reported?',
@@ -29,7 +20,9 @@ export default {
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 },
-                commonInstrumentationQuestions.y
+                ...['y', 'u', 'v', 'w', 's', 't', 'g', 'h', 'i', 'j'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                )
             ]
         }
     ]

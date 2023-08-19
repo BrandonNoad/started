@@ -7,21 +7,22 @@ export default {
     questionGroups: [
         {
             questions: [
-                ...['a', 'c', 'd'].map((key) => commonInstrumentationQuestions[key]),
+                ...['a'].map((key) => commonInstrumentationQuestions[key]),
+                {
+                    question:
+                        'Were the details of the equipment reported including model and recording system?',
+                    labels: [LABEL_ID_TRANSPARENCY],
+                    responseOptions: ['Yes', 'No']
+                },
                 {
                     question:
                         'Were details regarding recording settings reported (specifically signal acquisition rate/frame rate)?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 },
-                ...['e', 'f', 'g', 'h', 'i', 'j', 'k', 'm'].map(
+                ...['e', 'f', 'k', 'm', 'c', 'g', 'h', 'i', 'j'].map(
                     (key) => commonInstrumentationQuestions[key]
-                )
-            ]
-        },
-        {
-            heading: 'Assessment of Safety',
-            questions: [
+                ),
                 {
                     question: 'Was a validated penetration-aspiration scale used for VFSS?',
                     labels: [LABEL_ID_RIGOR],
@@ -49,12 +50,7 @@ export default {
                         'Was timing of safety impairment (i.e., before, during or after the swallow) acknowledged?',
                     labels: [LABEL_ID_RIGOR],
                     responseOptions: ['Yes', 'No']
-                }
-            ]
-        },
-        {
-            heading: 'Assessment of Efficiency',
-            questions: [
+                },
                 {
                     question: 'Was a validated residue scale used for VFSS?',
                     labels: [LABEL_ID_RIGOR],

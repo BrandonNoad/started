@@ -32,6 +32,12 @@ export default {
                     responseOptions: ['Yes', 'No']
                 },
                 {
+                    question:
+                        'Were swallow or swallowing-related treatment targets for the participant group(s) described?',
+                    labels: [LABEL_ID_TRANSPARENCY],
+                    responseOptions: ['Yes', 'No']
+                },
+                {
                     question: 'Was a device/tool utilized to facilitate treatment?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No'],
@@ -44,6 +50,25 @@ export default {
                                         'Was the specific type of device reported (make/model)?',
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
+                                },
+                                {
+                                    question:
+                                        'Was the resistance load setting on the device described (as appropriate)?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
+                                    responseOptions: ['Yes', 'No'],
+                                    questionGroups: [
+                                        {
+                                            filter: 0,
+                                            questions: [
+                                                {
+                                                    question:
+                                                        'Were the methods for determining the resistance load described (i.e., average, maximum values, or duration across a specified number of trials)?',
+                                                    labels: [LABEL_ID_TRANSPARENCY],
+                                                    responseOptions: ['Yes', 'No']
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 },
                                 {
                                     question: 'Was biofeedback offered as part of treatment?',
@@ -66,11 +91,6 @@ export default {
                             ]
                         }
                     ]
-                },
-                {
-                    question: 'Were treatment targets for the participant group(s) described?',
-                    labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
                 },
                 {
                     question: 'Were therapy sessions conducted in groups?',
@@ -100,19 +120,7 @@ export default {
                         'Did the study report any of the following items related to treatment regimen?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     isMultipleResponsesAllowed: true,
-                    responseOptions: [
-                        'Repetitions',
-                        'Frequency',
-                        'Intensity',
-                        'Duration',
-                        'Resistance Load (as applicable)'
-                    ]
-                },
-                {
-                    question:
-                        'Were the methods for determining resistance load described (i.e., average, maximum values, or duration across a specified number of trials)?',
-                    labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
+                    responseOptions: ['Repetitions', 'Frequency', 'Intensity', 'Duration']
                 },
                 {
                     question:

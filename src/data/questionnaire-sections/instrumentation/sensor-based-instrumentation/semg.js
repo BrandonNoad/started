@@ -6,14 +6,11 @@ export default {
     title: 'Surface Electromyography (sEMG)',
     questionGroups: [
         {
-            questions: ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
-        },
-        {
-            questions: ['r', 's', 't', 'u', 'v', 'w', 'x'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
+            questions: [
+                ...['u', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'r', 's', 't', 'v', 'w', 'x'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                )
+            ]
         }
     ]
 };

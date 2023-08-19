@@ -10,20 +10,8 @@ export default {
     title: 'Scintigraphy',
     questionGroups: [
         {
-            questions: ['a', 'c', 'd', 'e', 'g', 'h', 'i', 'j'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
-        },
-        {
-            questions: ['k', 'l', 'm'].map((key) => commonInstrumentationQuestions[key])
-        },
-        {
-            heading: 'Assessment of Efficiency',
-            questions: ['n', 'o'].map((key) => commonInstrumentationQuestions[key])
-        },
-        {
             questions: [
-                ...['r', 's', 't', 'u', 'v', 'w', 'x', 'y'].map(
+                ...['a', 'u', 'd', 'e', 'aa', 'ab', 'ac', 'ad', 'k'].map(
                     (key) => commonInstrumentationQuestions[key]
                 ),
                 {
@@ -38,6 +26,9 @@ export default {
                         'No stimuli and/or contrast material was utilized'
                     ]
                 },
+                ...['g', 'h', 'i', 'j', 'l', 'm', 'n', 'o', 'r', 's', 't', 'v', 'w', 'x', 'y'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                ),
                 {
                     question: 'Were Regions of Interest (ROIs) localized and identified?',
                     labels: [LABEL_ID_TRANSPARENCY],
@@ -60,9 +51,7 @@ export default {
                     labels: [LABEL_ID_RIGOR],
                     responseOptions: ['Yes', 'No']
                 },
-                ...['z', 'aa', 'ab', 'ac', 'ad', 'ae', 'af'].map(
-                    (key) => commonInstrumentationQuestions[key]
-                )
+                ...['z', 'ae', 'af'].map((key) => commonInstrumentationQuestions[key])
             ]
         }
     ]

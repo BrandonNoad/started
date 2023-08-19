@@ -30,66 +30,6 @@ export default {
                             filter: 1,
                             questions: [
                                 {
-                                    question: 'Was inter-rater reliability reported?',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No'],
-                                    questionGroups: [
-                                        {
-                                            filter: 0,
-                                            questions: [
-                                                {
-                                                    question:
-                                                        'Was the method for determining inter-rater reliability reported?',
-                                                    labels: [LABEL_ID_TRANSPARENCY],
-                                                    responseOptions: ['Yes', 'No']
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    question: 'Was intra-rater reliability reported?',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No', 'N/A'],
-                                    questionGroups: [
-                                        {
-                                            filter: 0,
-                                            questions: [
-                                                {
-                                                    question:
-                                                        'Was the method for determining intra-rater reliability reported?',
-                                                    labels: [LABEL_ID_TRANSPARENCY],
-                                                    responseOptions: ['Yes', 'No']
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    question: 'Were discrepancy resolution processes described?',
-                                    labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No', 'N/A']
-                                },
-                                {
-                                    question:
-                                        'Was the assessment or screening tool designed to detect a binary outcome (e.g., presence/absence of a diagnosis, pass/fail test)?',
-                                    labels: [],
-                                    responseOptions: ['Yes', 'No'],
-                                    questionGroups: [
-                                        {
-                                            filter: 0,
-                                            questions: [
-                                                {
-                                                    question:
-                                                        'Was sensitivity/specificity data reported?',
-                                                    labels: [LABEL_ID_TRANSPARENCY],
-                                                    responseOptions: ['Yes', 'No', 'N/A']
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
                                     question: 'Were all outcomes of the tool listed and described?',
                                     labels: [LABEL_ID_TRANSPARENCY],
                                     responseOptions: ['Yes', 'No']
@@ -104,6 +44,65 @@ export default {
                                     question: 'Were outcomes validated with instrumentation?',
                                     labels: [LABEL_ID_RIGOR],
                                     responseOptions: ['Yes', 'No']
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    question: 'Was inter-rater reliability reported?',
+                    labels: [LABEL_ID_TRANSPARENCY],
+                    responseOptions: ['Yes', 'No'],
+                    questionGroups: [
+                        {
+                            filter: 0,
+                            questions: [
+                                {
+                                    question:
+                                        'Was the method for determining inter-rater reliability reported?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
+                                    responseOptions: ['Yes', 'No']
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    question: 'Was intra-rater reliability reported?',
+                    labels: [LABEL_ID_TRANSPARENCY],
+                    responseOptions: ['Yes', 'No', 'N/A'],
+                    questionGroups: [
+                        {
+                            filter: 0,
+                            questions: [
+                                {
+                                    question:
+                                        'Was the method for determining intra-rater reliability reported?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
+                                    responseOptions: ['Yes', 'No']
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    question: 'Were discrepancy resolution processes described?',
+                    labels: [LABEL_ID_TRANSPARENCY],
+                    responseOptions: ['Yes', 'No', 'N/A']
+                },
+                {
+                    question:
+                        'Was the assessment or screening tool designed to detect a binary outcome (e.g., presence/absence of a diagnosis, pass/fail test)?',
+                    labels: [],
+                    responseOptions: ['Yes', 'No'],
+                    questionGroups: [
+                        {
+                            filter: 0,
+                            questions: [
+                                {
+                                    question: 'Were sensitivity/specificity data reported?',
+                                    labels: [LABEL_ID_TRANSPARENCY],
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 }
                             ]
                         }

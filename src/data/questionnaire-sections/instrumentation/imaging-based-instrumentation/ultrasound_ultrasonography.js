@@ -9,16 +9,8 @@ export default {
     title: 'Ultrasound / Ultrasonography',
     questionGroups: [
         {
-            questions: ['a', 'b', 'c', 'd', 'e', 'g', 'h', 'i', 'j'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
-        },
-        {
-            heading: 'Topical Applications',
-            questions: ['p'].map((key) => commonInstrumentationQuestions[key])
-        },
-        {
             questions: [
+                ...['a', 'p'].map((key) => commonInstrumentationQuestions[key]),
                 {
                     question: 'Was the type of the transducer (probe) reported?',
                     labels: [],
@@ -37,18 +29,20 @@ export default {
                         }
                     ]
                 },
-                commonInstrumentationQuestions.ad,
                 {
                     question: 'Was the wand type reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 },
-                commonInstrumentationQuestions.ae,
+                ...['d', 'e', 'ae'].map((key) => commonInstrumentationQuestions[key]),
                 {
                     question: 'Was the ultrasound mode (B-mode or T-mode) reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No']
                 },
+                ...['c', 'g', 'h', 'i', 'j', 'ad'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                ),
                 {
                     question: 'Was the position of the scan line reported?',
                     labels: [LABEL_ID_TRANSPARENCY],

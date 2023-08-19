@@ -6,12 +6,11 @@ export default {
     title: 'Tongue Pressure',
     questionGroups: [
         {
-            questions: ['b', 'c', 'd', 'e', 'f'].map((key) => commonInstrumentationQuestions[key])
-        },
-        {
-            questions: ['r', 's', 't', 'u', 'v', 'w'].map(
-                (key) => commonInstrumentationQuestions[key]
-            )
+            questions: [
+                ...['u', 'd', 'e', 'f', 'r', 's', 't', 'v', 'w'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                )
+            ]
         }
     ]
 };
