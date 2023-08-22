@@ -14,7 +14,7 @@ export default {
                     question:
                         'Was the non-instrumental swallowing assessment or screening tool validated?',
                     labels: [LABEL_ID_RIGOR],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,
@@ -22,7 +22,7 @@ export default {
                                 {
                                     question: 'Was the validation study referenced in the text?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 }
                             ]
                         },
@@ -32,18 +32,18 @@ export default {
                                 {
                                     question: 'Were all outcomes of the tool listed and described?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question:
                                         'Was the scale, metric, or criteria for each outcome described?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question: 'Were outcomes validated with instrumentation?',
                                     labels: [LABEL_ID_RIGOR],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 }
                             ]
                         }
@@ -52,7 +52,7 @@ export default {
                 {
                     question: 'Was inter-rater reliability reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,
@@ -61,7 +61,7 @@ export default {
                                     question:
                                         'Was the method for determining inter-rater reliability reported?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 }
                             ]
                         }
@@ -79,7 +79,7 @@ export default {
                                     question:
                                         'Was the method for determining intra-rater reliability reported?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 }
                             ]
                         }
@@ -94,7 +94,7 @@ export default {
                     question:
                         'Was the assessment or screening tool designed to detect a binary outcome (e.g., presence/absence of a diagnosis, pass/fail test)?',
                     labels: [],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,

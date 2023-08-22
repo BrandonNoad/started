@@ -7,7 +7,7 @@ export default {
     questionGroups: [
         {
             questions: [
-                ...['u', 'd', 'e', 'f', 'r', 's', 't', 'v', 'w'].map(
+                ...['d', 'e', 'f', 'r', 'y', 'u', 'v', 'w', 's', 't', 'j', 'g', 'h', 'i'].map(
                     (key) => commonInstrumentationQuestions[key]
                 )
             ]

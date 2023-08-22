@@ -30,23 +30,23 @@ export default {
                 {
                     question: 'Was there a control group?',
                     labels: [],
-                    responseOptions: ['Yes', 'No']
+                    responseOptions: ['Yes', 'No', 'N/A']
                 },
                 {
                     question: 'Was the number of participants reported?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
+                    responseOptions: ['Yes', 'No', 'N/A']
                 },
                 {
                     question: 'Were inclusion criteria defined?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
+                    responseOptions: ['Yes', 'No', 'N/A']
                 },
                 {
                     question:
                         'Were individuals with a diagnosis of dysphagia recruited into and/or identified in this study?',
                     labels: [],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,
@@ -54,35 +54,35 @@ export default {
                                 {
                                     question: 'Were the criteria for the term dysphagia defined?',
                                     labels: [LABEL_ID_TRANSPARENCY, LABEL_ID_RIGOR],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question: 'Was the method of confirming dysphagia described?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question:
                                         'Were citations regarding validity of the assessment method provided?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question:
                                         'Were citations regarding reliability of the assessment method provided?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question: 'Was dysphagia severity and duration described?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question:
                                         'Was baseline diet or method of nutritional intake reported (e.g., IDDSI range including food level and drink level)?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 }
                             ]
                         }
@@ -91,12 +91,12 @@ export default {
                 {
                     question: 'Were exclusion criteria defined?',
                     labels: [],
-                    responseOptions: ['Yes', 'No']
+                    responseOptions: ['Yes', 'No', 'N/A']
                 },
                 {
                     question: 'Did the study involve healthy participants?',
                     labels: [],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,
@@ -104,7 +104,7 @@ export default {
                                 {
                                     question: 'Were the criteria for health reported and defined?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question:
@@ -120,7 +120,7 @@ export default {
                     question:
                         'Did the study involve individuals with other medical diagnoses besides dysphagia (as opposed to individuals who were considered healthy)?',
                     labels: [],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,
@@ -143,7 +143,7 @@ export default {
                                     question:
                                         'Was there more than one group of patient participants?',
                                     labels: [],
-                                    responseOptions: ['Yes', 'No'],
+                                    responseOptions: ['Yes', 'No', 'N/A'],
                                     questionGroups: [
                                         {
                                             filter: 0,
@@ -152,7 +152,7 @@ export default {
                                                     question:
                                                         'Were the characteristics distinguishing these groups described?',
                                                     labels: [LABEL_ID_TRANSPARENCY],
-                                                    responseOptions: ['Yes', 'No']
+                                                    responseOptions: ['Yes', 'No', 'N/A']
                                                 }
                                             ]
                                         }

@@ -14,12 +14,8 @@ import {
     QUESTIONNAIRE_SECTION_ID_NASAL_CANNULA_AIRFLOW_RESPIRATORY_INDUCTANCE_PLETHYSMOGRAPHY,
     QUESTIONNAIRE_SECTION_ID_SEMG,
     QUESTIONNAIRE_SECTION_ID_INDUCED_REFLEXIVE_COUGH_TESTING_PNEUMOTACHOGRAPH,
-    QUESTIONNAIRE_SECTION_ID_SCINTIGRAPHY,
     QUESTIONNAIRE_SECTION_ID_ULTRASOUND_ULTRASONOGRAPHY,
-    QUESTIONNAIRE_SECTION_ID_CT_320_ROW_AREA_DETECTOR_SCAN,
     QUESTIONNAIRE_SECTION_ID_NEUROIMAGING,
-    QUESTIONNAIRE_SECTION_ID_OTHER_SENSOR_BASED_INSTRUMENTATION,
-    QUESTIONNAIRE_SECTION_ID_OTHER_IMAGING_BASED_INSTRUMENTATION,
     QUESTIONNAIRE_SECTION_ID_OTHER_INSTRUMENTATION,
     QUESTIONNAIRE_SECTION_ID_PROM
 } from './questionnaire-sections/constants';
@@ -69,7 +65,11 @@ export default [
                                             'Select the types of instrumentation used in the study:',
                                         isResponseRequired: false,
                                         isMultipleResponsesAllowed: true,
-                                        responseOptions: ['VFSS', 'FEES', 'Other (not listed)'],
+                                        responseOptions: [
+                                            'Videofluoroscopy (VFSS)',
+                                            'Endoscopy (FEES)',
+                                            'Other (not listed)'
+                                        ],
                                         questionnaireSections: [
                                             {
                                                 filter: 0,
@@ -90,19 +90,15 @@ export default [
                                                         isResponseRequired: false,
                                                         isMultipleResponsesAllowed: true,
                                                         responseOptions: [
-                                                            'Tongue Pressure Tools',
+                                                            'Tongue Pressure',
                                                             'High Resolution Pharyngeal Manometry (HRPM)',
                                                             'Peak Cough Flow Meter / Spirometry',
                                                             'Nasal Cannula Airflow / Respiratory Inductance Plethysmography',
                                                             'Surface Electromyography (sEMG)',
-                                                            'Induced Reflexive Cough Testing / Pneumotachograph',
-                                                            'Scintigraphy',
-                                                            'Ultrasound / Ultrasonography',
-                                                            'Computed Tomography / 320-Row Area Detector Scan ',
-                                                            'Neuroimaging (MRI, fMRI, MEG)',
-                                                            'Other Sensor-Based Instrumentation',
-                                                            'Other Imaging-Based Instrumentation',
-                                                            'Other (not listed)'
+                                                            'Cough Reflex Testing',
+                                                            'Ultrasound',
+                                                            'Neuroimaging (CT, MRI, fMRI, MEG)',
+                                                            'Other Instrumentation (not listed)'
                                                         ],
                                                         questionnaireSections: [
                                                             {
@@ -131,30 +127,14 @@ export default [
                                                             },
                                                             {
                                                                 filter: 6,
-                                                                id: QUESTIONNAIRE_SECTION_ID_SCINTIGRAPHY
-                                                            },
-                                                            {
-                                                                filter: 7,
                                                                 id: QUESTIONNAIRE_SECTION_ID_ULTRASOUND_ULTRASONOGRAPHY
                                                             },
                                                             {
-                                                                filter: 8,
-                                                                id: QUESTIONNAIRE_SECTION_ID_CT_320_ROW_AREA_DETECTOR_SCAN
-                                                            },
-                                                            {
-                                                                filter: 9,
+                                                                filter: 7,
                                                                 id: QUESTIONNAIRE_SECTION_ID_NEUROIMAGING
                                                             },
                                                             {
-                                                                filter: 10,
-                                                                id: QUESTIONNAIRE_SECTION_ID_OTHER_SENSOR_BASED_INSTRUMENTATION
-                                                            },
-                                                            {
-                                                                filter: 11,
-                                                                id: QUESTIONNAIRE_SECTION_ID_OTHER_IMAGING_BASED_INSTRUMENTATION
-                                                            },
-                                                            {
-                                                                filter: 12,
+                                                                filter: 8,
                                                                 id: QUESTIONNAIRE_SECTION_ID_OTHER_INSTRUMENTATION
                                                             }
                                                         ],
@@ -163,7 +143,7 @@ export default [
                                                             {
                                                                 filter: {
                                                                     type: FILTER_TYPE_SOME,
-                                                                    values: [10, 11, 12]
+                                                                    values: [8]
                                                                 },
                                                                 value: (
                                                                     <>

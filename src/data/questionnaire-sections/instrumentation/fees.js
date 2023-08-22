@@ -3,22 +3,21 @@ import commonInstrumentationQuestions from './commonInstrumentationQuestions';
 
 export default {
     id: QUESTIONNAIRE_SECTION_ID_FEES,
-    title: 'Fiberoptic Endoscopic Evaluation of Swallowing (FEES)',
+    title: 'Flexible Endoscopic Evaluation of Swallowing (FEES)',
     questionGroups: [
         {
-            // TODO: move question c down
             questions: [
                 {
                     question:
                         'Were the details of the equipment reported including scope model and recording system?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
+                    responseOptions: ['Yes', 'No', 'N/A']
                 },
                 ...['e', 'f'].map((key) => commonInstrumentationQuestions[key]),
                 {
                     question: 'Was dye used in the study?',
                     labels: [],
-                    responseOptions: ['Yes', 'No'],
+                    responseOptions: ['Yes', 'No', 'N/A'],
                     questionGroups: [
                         {
                             filter: 0,
@@ -27,7 +26,7 @@ export default {
                                     question:
                                         'Was coloring method for bolus trials described for reproducible preparation (i.e., color type, brand, mixture method, amount, etc.)?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 }
                             ]
                         }
@@ -47,7 +46,7 @@ export default {
                                 {
                                     question: 'Was a validated secretion scale used?',
                                     labels: [LABEL_ID_RIGOR],
-                                    responseOptions: ['Yes', 'No'],
+                                    responseOptions: ['Yes', 'No', 'N/A'],
                                     questionGroups: [
                                         {
                                             filter: 1,
@@ -56,7 +55,7 @@ export default {
                                                     question:
                                                         'Was application of non-validated secretion scale described in reproducible manner?',
                                                     labels: [LABEL_ID_TRANSPARENCY],
-                                                    responseOptions: ['Yes', 'No']
+                                                    responseOptions: ['Yes', 'No', 'N/A']
                                                 }
                                             ]
                                         }
@@ -85,7 +84,7 @@ export default {
                                     question:
                                         'Was a validated penetration-aspiration scale used for FEES?',
                                     labels: [LABEL_ID_RIGOR],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question:
@@ -97,13 +96,13 @@ export default {
                                     question:
                                         'Was application of the safety rating scale described in a reproducible manner (i.e., bolus level, swallow level, worst verse mean, etc.)?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question:
                                         'Was timing of safety impairment (i.e., before, during or after the swallow) acknowledged?',
                                     labels: [LABEL_ID_RIGOR],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 }
                             ]
                         }
@@ -120,7 +119,7 @@ export default {
                                 {
                                     question: 'Was a validated residue scale used for FEES?',
                                     labels: [LABEL_ID_RIGOR],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 },
                                 {
                                     question:
@@ -132,7 +131,7 @@ export default {
                                     question:
                                         'Was application of residue rating scale described in a reproducible manner (i.e., bolus level, swallow level, region, etc.)?',
                                     labels: [LABEL_ID_TRANSPARENCY],
-                                    responseOptions: ['Yes', 'No']
+                                    responseOptions: ['Yes', 'No', 'N/A']
                                 }
                             ]
                         }

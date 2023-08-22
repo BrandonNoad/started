@@ -7,20 +7,10 @@ export default {
     questionGroups: [
         {
             questions: [
-                ...['d', 'e', 'f', 'p', 'q', 'r'].map((key) => commonInstrumentationQuestions[key]),
-                {
-                    question:
-                        'Was a method for confirming and fixing catheter positioning reported?',
-                    labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
-                },
-                {
-                    question:
-                        'Were procedures for acclimatizing participants to the presence of the catheter reported?',
-                    labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
-                },
-                ...['y', 'u', 'v', 'w', 's', 't', 'g', 'h', 'i', 'j'].map(
+                ...['d', 'e', 'f', 'p', 'q', 'r', 'ag', 'ah'].map(
+                    (key) => commonInstrumentationQuestions[key]
+                ),
+                ...['y', 'u', 'v', 'w', 's', 't', 'j', 'g', 'h', 'i'].map(
                     (key) => commonInstrumentationQuestions[key]
                 )
             ]

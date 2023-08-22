@@ -24,7 +24,7 @@ export default {
         question:
             'Were the details of the equipment reported including model and recording system?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     e: {
         question: 'Were the names and system requirements of any analysis software described?',
@@ -49,7 +49,7 @@ export default {
                         sharedId: 'g-0-0',
                         question: 'Was inter-rater reliability reported?',
                         labels: [LABEL_ID_TRANSPARENCY],
-                        responseOptions: ['Yes', 'No'],
+                        responseOptions: ['Yes', 'No', 'N/A'],
                         questionGroups: [
                             {
                                 filter: 0,
@@ -59,7 +59,7 @@ export default {
                                         question:
                                             'Was the method for determining inter-rater reliability reported?',
                                         labels: [LABEL_ID_TRANSPARENCY],
-                                        responseOptions: ['Yes', 'No']
+                                        responseOptions: ['Yes', 'No', 'N/A']
                                     }
                                 ]
                             }
@@ -83,7 +83,7 @@ export default {
                         question:
                             'Was the method for determining intra-rater reliability reported?',
                         labels: [LABEL_ID_TRANSPARENCY],
-                        responseOptions: ['Yes', 'No']
+                        responseOptions: ['Yes', 'No', 'N/A']
                     }
                 ]
             }
@@ -107,7 +107,7 @@ export default {
                     {
                         question: 'Were exams recorded and reviewed post-hoc?',
                         labels: [LABEL_ID_RIGOR],
-                        responseOptions: ['Yes', 'No']
+                        responseOptions: ['Yes', 'No', 'N/A']
                     }
                 ]
             }
@@ -116,7 +116,7 @@ export default {
     k: {
         question: 'Was barium or contrast material used?',
         labels: [],
-        responseOptions: ['Yes', 'No'],
+        responseOptions: ['Yes', 'No', 'N/A'],
         questionGroups: [
             {
                 filter: 0,
@@ -125,18 +125,18 @@ export default {
                         question:
                             'Were details regarding name/brand/type of barium (or other contrast) reported?',
                         labels: [LABEL_ID_TRANSPARENCY],
-                        responseOptions: ['Yes', 'No']
+                        responseOptions: ['Yes', 'No', 'N/A']
                     },
                     {
                         question:
                             'Were details regarding barium (or other contrast) concentration reported?',
                         labels: [LABEL_ID_TRANSPARENCY],
-                        responseOptions: ['Yes', 'No']
+                        responseOptions: ['Yes', 'No', 'N/A']
                     },
                     {
                         question: 'Was the same concentration of barium used across trials?',
                         labels: [LABEL_ID_RIGOR],
-                        responseOptions: ['Yes', 'No']
+                        responseOptions: ['Yes', 'No', 'N/A']
                     }
                 ]
             }
@@ -146,7 +146,7 @@ export default {
         question:
             'Was the timing of ratings reported (e.g., at the time of evaluation versus after the evaluation)?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No'],
+        responseOptions: ['Yes', 'No', 'N/A'],
         questionGroups: [
             {
                 filter: 0,
@@ -155,7 +155,7 @@ export default {
                         question:
                             'Were ratings of the recorded signals made at the time of evaluation or after the evaluation?',
                         labels: [LABEL_ID_RIGOR],
-                        responseOptions: ['Yes', 'No']
+                        responseOptions: ['Yes', 'No', 'N/A']
                     }
                 ]
             }
@@ -164,7 +164,7 @@ export default {
     m: {
         question: 'Were standard rating methods used and identified (e.g. MBSImP, DIGEST, ASPEKT)?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     n: {
         question:
@@ -176,7 +176,7 @@ export default {
         question:
             'Was application of residue rating scale described in a reproducible manner (i.e., bolus level, swallow level, region, etc.)?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     p: {
         question:
@@ -210,7 +210,7 @@ export default {
         question:
             'Were the placement and orientation of the device, sensor(s), and/or catheter described?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     s: {
         question: 'Were operational definitions stated for every measurement that was recorded?',
@@ -220,7 +220,7 @@ export default {
     t: {
         question: 'Were all units of measurement reported?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     u: {
         question: 'Was the following task-specific information reported?',
@@ -232,7 +232,7 @@ export default {
             'Rest between trials',
             'Duration of session',
             'Number of sessions',
-            'Audio/visual recording during task ',
+            'Audio/visual recording during task',
             'Placement of device, sensor and/or catheter'
         ]
     },
@@ -246,7 +246,7 @@ export default {
         question:
             'Was there reporting of measurement artifact (e.g. non-task-related movement/data)?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No'],
+        responseOptions: ['Yes', 'No', 'N/A'],
         questionGroups: [
             {
                 filter: 0,
@@ -270,12 +270,12 @@ export default {
     y: {
         question: 'Was the presence or absence of any adverse events reported?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     z: {
         question: 'Was a marker used?',
         labels: [],
-        responseOptions: ['Yes', 'No'],
+        responseOptions: ['Yes', 'No', 'N/A'],
         questionGroups: [
             {
                 filter: 0,
@@ -283,7 +283,7 @@ export default {
                     {
                         question: 'Were its details and placement reported?',
                         labels: [LABEL_ID_TRANSPARENCY],
-                        responseOptions: ['Yes', 'No']
+                        responseOptions: ['Yes', 'No', 'N/A']
                     }
                 ]
             }
@@ -292,17 +292,17 @@ export default {
     aa: {
         question: 'Was frame rate reported?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     ab: {
         question: 'Was duration of the recording reported?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     ac: {
         question: 'Were the dose and radioactive liquid ingested reported?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     ad: {
         question: 'Were the following aspects of measurement reported (select all that apply)?',
@@ -319,11 +319,37 @@ export default {
     ae: {
         question: 'Was the resolution of the ultrasound/ultrasonography reported?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
     },
     af: {
         question: 'Was the data collected vs data analyzed reported?',
         labels: [LABEL_ID_TRANSPARENCY],
-        responseOptions: ['Yes', 'No']
+        responseOptions: ['Yes', 'No', 'N/A']
+    },
+    ag: {
+        question: 'Was a method for confirming and fixing catheter positioning reported?',
+        labels: [LABEL_ID_TRANSPARENCY],
+        responseOptions: ['Yes', 'No', 'N/A']
+    },
+    ah: {
+        question:
+            'Were procedures for acclimatizing participants to the presence of the catheter reported?',
+        labels: [LABEL_ID_TRANSPARENCY],
+        responseOptions: ['Yes', 'No', 'N/A']
+    },
+    ai: {
+        question:
+            'Were the following details regarding administration of contrast media described (select all that apply)?',
+        labels: [LABEL_ID_TRANSPARENCY],
+        isMultipleResponsesAllowed: true,
+        responseOptions: [
+            'Type (e.g., barium, diatrizoate)',
+            'Brand',
+            'Concentration',
+            'Method of administration (e.g., swallowed, injected)',
+            'Dosage timing',
+            'Timing of administration',
+            'No contrast agents were utilized'
+        ]
     }
 };

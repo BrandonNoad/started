@@ -5,20 +5,16 @@ import prom from './prom';
 import treatment from './treatment';
 import universallyApplicableQuestions from './universallyApplicableQuestions';
 import fees from './instrumentation/fees';
-import otherImagingBasedInstrumentation from './instrumentation/otherImagingBasedInstrumentation';
 import otherInstrumentation from './instrumentation/otherInstrumentation';
-import otherSensorBasedInstrumentation from './instrumentation/otherSensorBasedInstrumentation';
 import vfss from './instrumentation/vfss';
-import computedTomography_320RowAreaDetectorScan from './instrumentation/imaging-based-instrumentation/computedTomography_320RowAreaDetectorScan';
 import neuroimaging from './instrumentation/imaging-based-instrumentation/neuroimaging';
-import scintigraphy from './instrumentation/imaging-based-instrumentation/scintigraphy';
 import ultrasound_ultrasonography from './instrumentation/imaging-based-instrumentation/ultrasound_ultrasonography';
 import hrpm from './instrumentation/sensor-based-instrumentation/hrpm';
 import inducedReflexiveCoughTesting_pneumotachograph from './instrumentation/sensor-based-instrumentation/inducedReflexiveCoughTesting_pneumotachograph';
 import nasalCannulaAirflow_respiratoryInductancePlethysmography from './instrumentation/sensor-based-instrumentation/nasalCannulaAirflow_respiratoryInductancePlethysmography';
 import peakCoughFlowMeter_spirometry from './instrumentation/sensor-based-instrumentation/peakCoughFlowMeter_spirometry';
 import semg from './instrumentation/sensor-based-instrumentation/semg';
-import tonguePressureTools from './instrumentation/sensor-based-instrumentation/tonguePressureTools';
+import tonguePressure from './instrumentation/sensor-based-instrumentation/tonguePressureTools';
 
 export const labels = [
     {
@@ -31,26 +27,21 @@ export const labels = [
     }
 ];
 
-// Note - there is no value with order === 3.
 export default [
-    { ...nonInstrumentalAssessmentAndScreening, order: 4 },
-    { ...participants, order: 2 },
-    { ...prom, order: 21 },
-    { ...treatment, order: 20 },
     { ...universallyApplicableQuestions, order: 1 },
-    { ...fees, order: 6 },
-    { ...otherImagingBasedInstrumentation, order: 18 },
-    { ...otherInstrumentation, order: 19 },
-    { ...otherSensorBasedInstrumentation, order: 17 },
-    { ...vfss, order: 5 },
-    { ...computedTomography_320RowAreaDetectorScan, order: 15 },
-    { ...neuroimaging, order: 16 },
-    { ...scintigraphy, order: 13 },
-    { ...ultrasound_ultrasonography, order: 14 },
-    { ...hrpm, order: 8 },
-    { ...inducedReflexiveCoughTesting_pneumotachograph, order: 12 },
-    { ...nasalCannulaAirflow_respiratoryInductancePlethysmography, order: 10 },
-    { ...peakCoughFlowMeter_spirometry, order: 9 },
-    { ...semg, order: 11 },
-    { ...tonguePressureTools, order: 7 }
+    { ...participants, order: 2 },
+    { ...nonInstrumentalAssessmentAndScreening, order: 3 },
+    { ...vfss, order: 4 },
+    { ...fees, order: 5 },
+    { ...tonguePressure, order: 6 },
+    { ...hrpm, order: 7 },
+    { ...peakCoughFlowMeter_spirometry, order: 8 },
+    { ...nasalCannulaAirflow_respiratoryInductancePlethysmography, order: 9 },
+    { ...semg, order: 10 },
+    { ...inducedReflexiveCoughTesting_pneumotachograph, order: 11 },
+    { ...ultrasound_ultrasonography, order: 12 },
+    { ...neuroimaging, order: 13 },
+    { ...otherInstrumentation, order: 14 },
+    { ...treatment, order: 15 },
+    { ...prom, order: 16 }
 ];

@@ -6,14 +6,15 @@ import commonInstrumentationQuestions from '../commonInstrumentationQuestions';
 
 export default {
     id: QUESTIONNAIRE_SECTION_ID_INDUCED_REFLEXIVE_COUGH_TESTING_PNEUMOTACHOGRAPH,
-    title: 'Induced Reflexive Cough Testing / Pneumotachograph',
+    title: 'Cough Reflex Testing',
     questionGroups: [
         {
             questions: [
-                commonInstrumentationQuestions.u,
+                ...['d', 'e', 'f'].map((key) => commonInstrumentationQuestions[key]),
+
                 {
                     question:
-                        'Were the following aspects of cough stimuli described (select all that apply)?',
+                        'Were the following aspects of tussive (cough inducing) stimuli described (select all that apply)?',
                     labels: [LABEL_ID_TRANSPARENCY],
                     isMultipleResponsesAllowed: true,
                     responseOptions: [
@@ -22,15 +23,16 @@ export default {
                         'Quantity per dosage',
                         'Dosage duration',
                         'Timing of dosage administrations within inspiratory/expiratory cycle',
-                        'No cough stimuli were utilized.'
+                        'No cough stimuli were utilized'
                     ]
                 },
+                ...['y', 'u'].map((key) => commonInstrumentationQuestions[key]),
                 {
                     question: 'Was a procedure for determining reflexive cough threshold utilized?',
                     labels: [LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No']
+                    responseOptions: ['Yes', 'No', 'N/A']
                 },
-                ...['d', 'e', 'f', 'r', 's', 't', 'v', 'w', 'x'].map(
+                ...['v', 'w', 'j', 's', 't', 'g', 'h', 'i'].map(
                     (key) => commonInstrumentationQuestions[key]
                 )
             ]
