@@ -81,18 +81,6 @@ const Questionnaire = ({ questionnaireSections, responses, setResponses, allQues
 
     // -- Questionnaire Section View
 
-    // TODO: I am keeping this commented out code temporarily in case we want to revert the changes
-    // to the progress calculations.
-    // const updateProgress = () => {
-    //     setProgressData({
-    //         ...progressData,
-    //         [activeQuestionnaireSection.id]: generateProgressDataForQuestionGroups({
-    //             questionGroups: activeQuestionnaireSection.questionGroups,
-    //             responses
-    //         })
-    //     });
-    // };
-
     const handleClickNextSection = () => {
         updateProgress();
 
