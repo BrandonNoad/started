@@ -75,7 +75,7 @@ export default {
                 {
                     question: 'Were participants blinded to task or treatment condition?',
                     labels: [LABEL_ID_RIGOR, LABEL_ID_TRANSPARENCY],
-                    responseOptions: ['Yes', 'No', 'Not reported']
+                    responseOptions: ['Yes', 'No', 'N/A']
                 },
                 {
                     question: 'Were raters blinded to participant ID/group assignment?',
