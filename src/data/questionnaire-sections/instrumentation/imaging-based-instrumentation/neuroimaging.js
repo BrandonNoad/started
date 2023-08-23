@@ -28,21 +28,6 @@ export default {
                     labels: [LABEL_ID_TRANSPARENCY],
                     responseOptions: ['Yes', 'No', 'N/A']
                 },
-                {
-                    question:
-                        'Were the following details regarding administration of contrast media described (select all that apply)?',
-                    labels: [LABEL_ID_TRANSPARENCY],
-                    isMultipleResponsesAllowed: true,
-                    responseOptions: [
-                        'Type (e.g., barium, diatrizoate)',
-                        'Brand',
-                        'Concentration',
-                        'Method of administration (e.g., swallowed, injected)',
-                        'Dosage timing',
-                        'Timing of administration',
-                        'No contrast agents were utilized'
-                    ]
-                },
                 ...['ai', 'y'].map((key) => commonInstrumentationQuestions[key]),
                 {
                     question: 'Was the following task-specific information reported?',
