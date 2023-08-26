@@ -134,18 +134,20 @@ const QuestionGroup = ({
                                     <Text as="span" fontSize="md" mr={2}>
                                         {question}
                                     </Text>
-                                    {labels.map((labelId) => (
-                                        <Tag
-                                            key={labelId.toString()}
-                                            colorScheme="primary"
-                                            variant="outline"
-                                            size="sm"
-                                            mr={2}
-                                            verticalAlign="text-bottom"
-                                        >
-                                            {labelsIndexed[labelId].label}
-                                        </Tag>
-                                    ))}
+                                    {false
+                                        ? labels.map((labelId) => (
+                                              <Tag
+                                                  key={labelId.toString()}
+                                                  colorScheme="primary"
+                                                  variant="outline"
+                                                  size="sm"
+                                                  mr={2}
+                                                  verticalAlign="text-bottom"
+                                              >
+                                                  {labelsIndexed[labelId].label}
+                                              </Tag>
+                                          ))
+                                        : null}
                                 </Box>
                             </FormLabel>
                             <VStack align="flex-start" spacing={1}>

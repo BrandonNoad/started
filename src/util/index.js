@@ -140,9 +140,11 @@ const questionGroupsToBlobData = ({
                 const responseLeadingWhitespace = responsesForQuestion !== '' ? `${indent}  ` : '';
 
                 return [
-                    `${indent}- ${question}${labels
-                        .map((labelId) => ` [${labelsIndexed[labelId].label}]`)
-                        .join('')}`,
+                    `${indent}- ${question}${
+                        false
+                            ? labels.map((labelId) => ` [${labelsIndexed[labelId].label}]`).join('')
+                            : ''
+                    }`,
                     `${questionTrailingWhitespace}\n${responseLeadingWhitespace}${responsesForQuestion}\n`,
                     ...questionGroupsToBlobData({
                         questionGroups: questionGroups ?? [],
