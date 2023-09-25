@@ -20,7 +20,7 @@ import Footer from '../components/Footer';
 const commonPx = [3, 8, 12];
 
 const BlogLayout = ({ title, children }) => {
-    const [isAlertVisible, setIsAlertVisible] = useState(false);
+    const [isAlertVisible, setIsAlertVisible] = useState(true);
 
     return (
         <>
